@@ -1,0 +1,47 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .plans-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .workout-plan {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    width: 250px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s;
+    cursor: pointer;
+  }
+  
+  .workout-plan:hover {
+    transform: scale(1.05);
+  }
+  
+  .workout-plan h2 {
+    margin: 0;
+  }
+  
+  .workout-plan p {
+    margin: 5px 0 0;
+  }
+  
