@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    color: black;
   }
   
   h1 {
@@ -39,9 +40,11 @@ body {
   
   .workout-plan h2 {
     margin: 0;
+    text-decoration: none;
   }
-  
   .workout-plan p {
     margin: 5px 0 0;
+    text-decoration: none;
+    color: white;
   }
   

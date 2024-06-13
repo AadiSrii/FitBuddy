@@ -1,0 +1,51 @@
+[
+    {
+      "id": "weight-loss",
+      "name": "Weight Loss",
+      "backgroundImage": "/images/weight-loss.jpg",
+      "foods": [
+        { "name": "Broccoli", "image": "/images/broccoli.jpg" },
+        { "name": "Salmon", "image": "/images/salmon.jpg" },
+        { "name": "Quinoa", "image": "/images/quinoa.jpg" }
+      ],
+      "nutritionGraph": {
+        "calories": [2000, 1800, 1600, 1500, 1400, 1300, 1200],
+        "protein": [50, 45, 40, 35, 30, 25, 20],
+        "carbs": [200, 180, 160, 150, 140, 130, 120],
+        "fat": [80, 70, 60, 50, 40, 30, 20]
+      }
+    },
+    {
+      "id": "weight-gain",
+      "name": "Weight Gain",
+      "backgroundImage": "/images/weight-gain.jpg",
+      "foods": [
+        { "name": "Oatmeal", "image": "/images/oatmeal.jpg" },
+        { "name": "Chicken Breast", "image": "/images/chicken-breast.jpg" },
+        { "name": "Avocado", "image": "/images/avocado.jpg" }
+      ],
+      "nutritionGraph": {
+        "calories": [2500, 2700, 3000, 3200, 3500, 3800, 4000],
+        "protein": [70, 75, 80, 85, 90, 95, 100],
+        "carbs": [300, 320, 350, 380, 400, 420, 450],
+        "fat": [100, 110, 120, 130, 140, 150, 160]
+      }
+    },
+    {
+      "id": "protein",
+      "name": "Protein",
+      "backgroundImage": "/images/protein.jpg",
+      "foods": [
+        { "name": "Eggs", "image": "/images/eggs.jpg" },
+        { "name": "Greek Yogurt", "image": "/images/greek-yogurt.jpg" },
+        { "name": "Tofu", "image": "/images/tofu.jpg" }
+      ],
+      "nutritionGraph": {
+        "calories": [1800, 1900, 2000, 2100, 2200, 2300, 2400],
+        "protein": [60, 65, 70, 75, 80, 85, 90],
+        "carbs": [150, 160, 170, 180, 190, 200, 210],
+        "fat": [70, 75, 80, 85, 90, 95, 100]
+      }
+    }
+  ]
+  
