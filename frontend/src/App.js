@@ -7,6 +7,7 @@ import { Community } from "./pages/Community";
 import { Shop } from "./pages/Shop";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
+import { Benefits } from "./pages/Benefits";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Shop" element={<Shop/>} />
         <Route path="/Login" element={<Login/>} />
         <Route path="/Signup" element={<Signup/>} />
+        <Route path="/Benefits" element={<Benefits/>} />
       </Routes>
     </Router>
   );
