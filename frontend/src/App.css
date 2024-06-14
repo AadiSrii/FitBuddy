@@ -4,3 +4,330 @@
 }
 
 
+.pointer {
+  cursor: pointer;
+  font-size: 13.5px;
+}
+
+.footer {
+  background-color: rgb(234, 244, 252);
+}
+
+.Inc {
+  letter-spacing: -0.2px;
+  font-size: 13.5px;
+  margin-left: 100px;
+}
+
+.privacy {
+  margin-left: 25px;
+  word-spacing: -2px;
+  margin-right: 10px;
+  font-size: 13px;
+  cursor: pointer;
+
+}
+
+.pre {
+  margin-left: 100px;
+  word-spacing: -2px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.terms {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.cookie {
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.ad {
+  margin-left: 100px;
+  margin-right: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.do {
+  margin-left: 375px;
+  margin-right: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.workout {
+  font-weight: bold;
+  margin-top: 30px;
+}
+
+.marathon {
+  font-size: 15px;
+  margin-top: 15px;
+}
+
+hr {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.eat {
+  width: 100%;
+  display: flex;
+  gap: 150px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+
+}
+
+.eat-text {
+  width: 40%;
+  padding-top: 150px;
+  margin-left: 100px;
+
+}
+
+.eat-text>h1 {
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.eat-text>button {
+  width: 150px;
+  height: 45px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border-radius: 25px;
+  border: none;
+  margin-top: 25px;
+}
+
+.eat-image {
+  width: 36%;
+}
+
+.food {
+  width: 100%;
+}
+
+
+.Benefits {
+  width: 100%;
+  margin-top: 50px;
+  display: flex;
+  height: 70vh;
+}
+
+.Benefits-text {
+  width: 30%;
+
+  margin-left: 100px;
+  padding-top: 40px;
+}
+
+.Benefits-text>h1 {
+  font-weight: bold;
+}
+
+.benefits-btn {
+  width: 150px;
+  height: 45px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+.Benefits-text>p {
+  margin-top: 20px;
+}
+
+.Benefits-img {
+  width: 56%;
+  column-gap: 20px;
+  display: flex;
+
+
+}
+
+.b-image2 {
+
+  width: 100%;
+
+}
+
+.b-image4 {
+
+  width: 100%;
+  height: 100%;
+
+}
+
+.b-img2 {
+  width: 100%;
+  height: 73%;
+}
+
+.b-img4 {
+  width: 100%;
+  height: 73%;
+}
+
+
+
+/* *********************** benefits page */
+
+body {
+  background-color: #ececff;
+}
+
+.benefits-page {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+
+}
+
+.p-img1 {
+
+  width: 28%;
+  height: 40vh;
+  margin-left: 150px;
+}
+
+.p-img1>img {
+  width: 100%;
+
+}
+
+.p-text1 {
+  width: 50%;
+  height: 40vh;
+}
+
+.heading1 {
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-top: 80px;
+  margin-left: 550px;
+}
+
+.p-text1>p {
+  font-weight: bold;
+  color: rgb(97, 97, 97);
+  font-family: sans-serif;
+}
+
+
+/*     */
+
+.weight {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+
+}
+
+.p-img2 {
+  width: 28%;
+  height: 30vh;
+
+}
+
+.p-img2>img {
+  width: 100%;
+  height: 30vh;
+
+}
+
+.p-text2 {
+  width: 50%;
+  height: 30vh;
+  margin-left: 150px;
+}
+
+.heading2 {
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-top: 50px;
+  margin-left: 530px;
+}
+
+.p-text2>p {
+  font-weight: bold;
+  color: rgb(97, 97, 97);
+  font-family: sans-serif;
+}
+
+.heading3 {
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-top: 80px;
+  margin-left: 380px;
+}
+
+
+.heading4 {
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-left: 380px;
+  margin-top: 120px;
+}
+
+.Muscle {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+
+}
+
+.p-img4 {
+  width: 28%;
+  height: 35vh;
+
+}
+
+.p-img4>img {
+  width: 100%;
+  height: 35vh;
+
+}
+
+.p-text4 {
+  width: 50%;
+  height: 30vh;
+  margin-left: 150px;
+}
+
+
+.p-text4>p {
+  font-weight: bold;
+  color: rgb(97, 97, 97);
+  font-family: sans-serif;
+}
+
+
+.p-img3 {
+
+  width: 28%;
+  height: 40vh;
+  margin-left: 150px;
+}
+
+.p-img3>img {
+  width: 100%;
+  height: 50vh;
+
+}
