@@ -27,12 +27,44 @@ import nutritionRouter from './src/routes/nutritionrouter.js';
 import adminRouter from './src/routes/userCount.js';
 
 
- 
+import cron from 'node-cron';
+import Nutrition from './models/Nutrition.js';
+
+// Function to reset nutrition data
+const resetNutritionData = async () => {
+  try {
+    await Nutrition.updateMany({}, {
+      calories: 0,
+      serving_size_g: 0,
+      fat_total_g: 0,
+      fat_saturated_g: 0,
+      protein_g: 0,
+      sodium_mg: 0,
+      potassium_mg: 0,
+      cholesterol_mg: 0,
+      carbohydrates_total_g: 0,
+      fiber_g: 0,
+      sugar_g: 0,
+    });
+    console.log('Nutrition data reset successfully!');
+  } catch (error) {
+    console.error('Error resetting nutrition data:', error.message);
+  }
+};
+
+
+
+
+
+
 
 
 // Run this cron job at the end of each day (e.g., at 23:59)
 cron.schedule('59 23 * * *', async () => {
   try {
+
+   await resetNutritionData();
+
     const dashboards = await Dashboard.find();
     
     dashboards.forEach(async (dashboard) => {
