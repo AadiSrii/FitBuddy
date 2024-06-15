@@ -7,6 +7,12 @@ import './NutritionPlans.css'; // Style file for this component
 
 const NutritionPlans = () => {
   return (
+    <div>
+      <div id='Head'>
+      <h1 id='h1'>Nutrition</h1>
+      <h4>Explore new culinary horizons, embrace healthier choices. Start your journey today!
+      </h4>
+      </div>
     <div className="plan-grid">
       {nutritionPlans.map(plan => (
         <Link key={plan.id} to={`/nutrition/${plan.id}`} className="plan-card">
@@ -15,6 +21,7 @@ const NutritionPlans = () => {
           </div>
         </Link>
       ))}
+    </div>
     </div>
   );
 };

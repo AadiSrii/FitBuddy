@@ -2,7 +2,7 @@
     {
       "id": "weight-loss",
       "name": "Weight Loss",
-      "backgroundImage": "/images/weight-loss.jpg",
+      "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTllTTp_9-aTdm-EkQrVi6IVd0oEoG-DNwi9A&s",
       "foods": [
         { "name": "Broccoli", "image": "/images/broccoli.jpg" },
         { "name": "Salmon", "image": "/images/salmon.jpg" },
@@ -18,7 +18,7 @@
     {
       "id": "weight-gain",
       "name": "Weight Gain",
-      "backgroundImage": "/images/weight-gain.jpg",
+      "backgroundImage": "https://img.etimg.com/thumb/msid-94501301,width-900,height-1200,resizemode-6.cms",
       "foods": [
         { "name": "Oatmeal", "image": "/images/oatmeal.jpg" },
         { "name": "Chicken Breast", "image": "/images/chicken-breast.jpg" },
@@ -34,7 +34,7 @@
     {
       "id": "protein",
       "name": "Protein",
-      "backgroundImage": "/images/protein.jpg",
+      "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLw-p9454tUkk2MzMiEkVH0JcqesYT8rMtaQ&s",
       "foods": [
         { "name": "Eggs", "image": "/images/eggs.jpg" },
         { "name": "Greek Yogurt", "image": "/images/greek-yogurt.jpg" },
@@ -46,6 +46,91 @@
         "carbs": [150, 160, 170, 180, 190, 200, 210],
         "fat": [70, 75, 80, 85, 90, 95, 100]
       }
+    },
+    {
+      "id": "low-carb",
+      "name": "Low Carb",
+      "backgroundImage": "https://cdn.squats.in/kc_articles/48deaa7c43457fa5ad75e7a9856ec8f9.jpeg",
+      "foods": [
+        { "name": "Spinach", "image": "/images/spinach.jpg" },
+        { "name": "Chicken Thigh", "image": "/images/chicken-thigh.jpg" },
+        { "name": "Almonds", "image": "/images/almonds.jpg" }
+      ],
+      "nutritionGraph": {
+        "calories": [1800, 1700, 1600, 1500, 1400, 1300, 1200],
+        "protein": [55, 50, 45, 40, 35, 30, 25],
+        "carbs": [100, 90, 80, 70, 60, 50, 40],
+        "fat": [90, 85, 80, 75, 70, 65, 60]
+      }
+    },
+    {
+      "id": "keto",
+      "name": "Keto",
+      "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDsMOUgbLxlsuYJBkcHuOpaO6c-Fly3cy88g&s",
+      "foods": [
+        { "name": "Cheese", "image": "/images/cheese.jpg" },
+        { "name": "Bacon", "image": "/images/bacon.jpg" },
+        { "name": "Avocado", "image": "/images/avocado.jpg" }
+      ],
+      "nutritionGraph": {
+        "calories": [2200, 2100, 2000, 1900, 1800, 1700, 1600],
+        "protein": [65, 60, 55, 50, 45, 40, 35],
+        "carbs": [50, 45, 40, 35, 30, 25, 20],
+        "fat": [150, 145, 140, 135, 130, 125, 120]
+      }
+    },
+    {
+      "id": "vegetarian",
+      "name": "Vegetarian",
+      "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpQKoOQYel_joEPWajm6UOKWTlZasc9Sx_hg&s",
+      "foods": [
+        { "name": "Lentils", "image": "/images/lentils.jpg" },
+        { "name": "Sweet Potato", "image": "/images/sweet-potato.jpg" },
+        { "name": "Peanut Butter", "image": "/images/peanut-butter.jpg" }
+      ],
+      "nutritionGraph": {
+        "calories": [1900, 2000, 2100, 2200, 2300, 2400, 2500],
+        "protein": [50, 55, 60, 65, 70, 75, 80],
+        "carbs": [250, 260, 270, 280, 290, 300, 310],
+        "fat": [80, 85, 90, 95, 100, 105, 110]
+      }
+    },
+    {
+      "id": "paleo",
+      "name": "Paleo",
+      "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8R7slr4LfwfmKbEXjxzGd5xxOjvUqoVB0-g&s",
+      "foods": [
+        { "name": "Grass-fed Beef", "image": "/images/beef.jpg" },
+        { "name": "Blueberries", "image": "/images/blueberries.jpg" },
+        { "name": "Walnuts", "image": "/images/walnuts.jpg" }
+      ],
+      "nutritionGraph": {
+        "calories": [2000, 2100, 2200, 2300, 2400, 2500, 2600],
+        "protein": [60, 65, 70, 75, 80, 85, 90],
+        "carbs": [180, 170, 160, 150, 140, 130, 120],
+        "fat": [90, 95, 100, 105, 110, 115, 120]
+      }
+    },
+    {
+      "id": "mediterranean",
+      "name": "Mediterranean",
+      "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqopojW_pjP-CdaxvOsVTF7wp-9k2YnheBiA&s",
+      "foods": [
+        { "name": "Olives", "image": "/images/olives.jpg" },
+        { "name": "Hummus", "image": "/images/hummus.jpg" },
+        { "name": "Tomatoes", "image": "/images/tomatoes.jpg" }
+      ],
+      "nutritionGraph": {
+        "calories": [2000, 2100, 2200, 2300, 2400, 2500, 2600],
+        "protein": [55, 60, 65, 70, 75, 80, 85],
+        "carbs": [220, 230, 240, 250, 260, 270, 280],
+        "fat": [70, 75, 80, 85, 90, 95, 100]
+      }
     }
+    
+    
+    
+    
+    
   ]
   

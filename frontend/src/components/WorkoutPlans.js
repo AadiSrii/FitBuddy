@@ -112,12 +112,16 @@ const WorkoutPlans = () => {
         description: 'Exercises to improve joint mobility and flexibility.',
         backgroundImage: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHx8HY3q4p-IB_POuf0EMjgLwzqXfcwt5iTA&s'
       }
-
+      
   ];
 
   return (
     <div>
-      <h1>Workout Plans</h1>
+      <div className='head'>
+        <h1>CHALLENGE YOURSELF: Power Up Your Fitness Journey
+        </h1>
+        <p>Join challenges to set goals, push your limits, and cheer on your workout buddies. Don't miss out on the chance to win prizes—start your challenge today!</p>
+    </div>
       <div className="plans-container">
         {plans.map(plan => (
           <Link to={`/workout/${plan.id}`} key={plan.id}> {/* Ensure 'to' attribute is correctly defined */}
