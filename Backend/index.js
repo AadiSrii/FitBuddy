@@ -25,10 +25,11 @@ import Dashboard from './src/models/dashboard.js';
 import DashboardRouter from './src/routes/dashboardroutes.js';
 import nutritionRouter from './src/routes/nutritionrouter.js';
 import adminRouter from './src/routes/userCount.js';
+import Nutrition from './src/models/nutrition.js';
 
 
-import cron from 'node-cron';
-import Nutrition from './models/Nutrition.js';
+
+
 
 // Function to reset nutrition data
 const resetNutritionData = async () => {
