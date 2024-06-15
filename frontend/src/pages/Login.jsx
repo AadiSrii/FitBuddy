@@ -57,32 +57,40 @@ export function Login() {
   return (
     <Center h="100vh" w="100vw">
       <Box maxW="md" mx="auto" mt="8">
-        <Heading as="h1" mb="4" textAlign="center" size="lg">
+        <Heading as="h2" mb="15" textAlign="center" size="lg">
           Login
         </Heading>
         <Box
           bg="white"
-          p="8"
+          p="25"
+          pt="40px"
           rounded="lg"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         >
           <form onSubmit={handleSubmit}>
             <Input
-              mb="4"
+              mb="16"
               name="email"
               type="email"
+              height="40px"
+              width="350px"
               placeholder="Email"
               onChange={handleChange}
               value={userData.email}
             />
+            <br />
             <Input
-              mb="4"
+              mb="12"
               name="pass"
               type="password"
               placeholder="Password"
+              height="40px"
+              width="350px"
+             
               onChange={handleChange}
               value={userData.pass}
             />
+            
             {adminPass && (
               <p style={{ paddingBottom: "10px", color: "red" }}>
                 Enter correct password
@@ -93,14 +101,20 @@ export function Login() {
                 Please enter valid credential
               </p>
             )}
-            <Button type="submit" colorScheme="blue" width="full">
+            <br />
+            <Button type="submit" backgroundColor="skyblue" width="350px" height="40px" border="none" borderRadius="5px" fontWeight="600" fontSize="17px" color="white" marginTop="15px">
               Login
             </Button>
           </form>
           <Box mt={4} textAlign="center">
             <Button
               variant="link"
-              color="blue.500"
+              color="skyblue"
+              fontSize="17px"
+              fontWeight="600"
+              border="none"
+              backgroundColor='white'
+              marginTop="15px"
               onClick={() => navigate("/signup")}
             >
               Create new Account

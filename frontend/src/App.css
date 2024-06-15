@@ -1,16 +1,120 @@
+.nav {
+  display: flex;
+  gap: 40px;
+  border-bottom: 1px solid black;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: black;
+  height: 10vh;
+  padding-left: 100px;
+}
+
+.carousel1 {
+  height: 83vh;
+  object-fit: cover;
+}
+
+.head-1 {
+  margin-right: 73%;
+  margin-top: -300px;
+  color: white;
+}
+
 .carousel-control-prev,
 .carousel-control-next {
   display: none;
 }
 
+.loginBox {
+  width: 300px;
+  margin-left: 900px;
+  margin-top: 190px;
+}
+
+.loginBox button {
+  width: 250px;
+  height: 45px;
+  color: black;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 650;
+}
+
+.loginBox>span {
+  color: black;
+  font-size: 18px;
+}
+
+.textLogin {
+  color: black;
+  font-size: 18px;
+}
 
 .pointer {
   cursor: pointer;
   font-size: 13.5px;
 }
 
+
+.small-carousel{
+  width: 1130px; 
+  height: 370px;
+   border: 1px solid;
+    margin-left: 200px;
+     margin-top: 70px;
+}
+
 .footer {
   background-color: rgb(234, 244, 252);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-left: 6%;
+  padding-right: 6%;
+  /* border: 1px solid; */
+}
+
+
+
+.footerCol1 {
+  /* border: 1px solid; */
+  width: 12%;
+}
+
+.footerImg1 {
+  width: 70%;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  cursor: pointer;
+
+
+}
+
+.appleApp {
+  width: 100%;
+}
+
+
+.footerImg2 {
+  width: 70%;
+  cursor: pointer;
+}
+
+.playStor {
+  width: 100%;
+  margin-bottom: 30%;
+}
+
+
+.blackfooter {
+  width: 1519.5px;
+  height: 70px;
+  background-color: black;
+  color: white;
+  padding-left: 200px;
+  padding-top: 10px;
 }
 
 .Inc {
@@ -81,7 +185,7 @@ hr {
 .eat {
   width: 100%;
   display: flex;
-  gap: 150px;
+  gap: 210px;
   margin-bottom: 50px;
   margin-top: 50px;
 
@@ -111,7 +215,7 @@ hr {
 }
 
 .eat-image {
-  width: 36%;
+  width: 32%;
 }
 
 .food {
@@ -331,3 +435,18 @@ body {
   height: 50vh;
 
 }
+
+
+
+
+/* ******************** */
+
+
+/* 
+@media screen and (max-width: 768px) {
+  .nav{
+     width: 100%;
+     height: 70px;
+     background-color: black;
+  }
+} */

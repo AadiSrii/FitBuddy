@@ -92,41 +92,51 @@ export function Signup() {
 
   return (
     <Center h="100vh" w="100vw">
-      <Box maxW="md" mx="auto" mt="8">
-        <Heading as="h1" mb="4" textAlign="center" size="lg">
+      <Box maxW="md" mx="auto" mt="8" >
+        <Heading as="h2" mb="4" textAlign="center" size="lg">
           Sign Up
         </Heading>
         <Box
           mt="30px"
           bg="white"
-          p="8"
+          p="30"
+          pt="40px"
           rounded="lg"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         >
           <form onSubmit={handleSubmit}>
             <Input
-              mb="4"
+              mb="14"
+              w="350px"
+               height="40px"
               name="u_name"
               placeholder="Username"
               onChange={handleChange}
               value={userData.u_name}
             />
+            <br/>
             <Input
-              mb="4"
+              mb="14"
+              w="350px"
+              height="40px"
               name="email"
               type="email"
               placeholder="Email"
               onChange={handleChange}
               value={userData.email}
             />
+            <br />
             <Input
-              mb="4"
+              mb="14"
               name="password"
               type="password"
+              w="350px"
+              height="40px"
               placeholder="Password"
               onChange={handleChange}
               value={userData.password}
             />
+            <br />
 
             {passBox && (
               <div style={{ paddingBottom: "20px" }}>
@@ -207,14 +217,20 @@ export function Signup() {
                 </Flex>
               </div>
             )}
-            <Button type="submit" colorScheme="blue" width="full">
+            <Button type="submit" colorScheme="blue" width="350px"borderRadius="5px" color="white" backgroundColor="skyblue" border="none" height="40px" marginTop="10px" >
               Sign Up
             </Button>
+        
           </form>
           <Box mt={4} textAlign="center">
             <Button
               variant="link"
-              color="blue.500"
+              color="skyblue"
+              fontWeight="600"
+              fontSize="18px"
+              border="lightGray"
+              backgroundColor="white"
+              marginTop="15px"
               onClick={() => navigate("/login")}
             >
               Login
