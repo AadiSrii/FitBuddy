@@ -1,0 +1,108 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+}
+
+.dashboard-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  justify-content: space-around;
+}
+
+.card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card label {
+  font-weight: bold;
+  color: #555;
+  margin-top: 10px;
+}
+
+.card span {
+  font-weight: bold;
+  color: #333;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.card .icon {
+  font-size: 40px;
+  color: #76c7c0;
+}
+
+.calories-burned .icon {
+  color: #ff6f61; /* Light red */
+}
+
+.workouts-completed .icon {
+  color: #ffeb3b; /* Light yellow */
+}
+
+.calories-intake .icon {
+  color: #4caf50; /* Light green */
+}
+
+.calories-goal .icon {
+  color: #2196f3; /* Light blue */
+}
+
+.progress-card {
+  background: #fff3e0;
+}
+
+.progress-container {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.graph-section {
+  margin-top: 40px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.graph-section h3 {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+  }
+}
