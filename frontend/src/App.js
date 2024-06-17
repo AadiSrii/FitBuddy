@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Navbar } from "./components/Navbar";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Benefits" element={<Benefits/>} />
       </Routes>
     </Router>
+
   );
 }
 
