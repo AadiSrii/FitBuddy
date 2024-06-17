@@ -4,9 +4,9 @@
       "name": "Weight Loss",
       "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTllTTp_9-aTdm-EkQrVi6IVd0oEoG-DNwi9A&s",
       "foods": [
-        { "name": "Broccoli", "image": "/images/broccoli.jpg" },
-        { "name": "Salmon", "image": "/images/salmon.jpg" },
-        { "name": "Quinoa", "image": "/images/quinoa.jpg" }
+        { "name": "Broccoli", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcmxW35EWdq5rNmAXJuySTtiOlH7rFsqhlHA&s" },
+        { "name": "Salmon", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjn7Gvvkq8X3oYwhVAEcIlQ0skPVeRjKWq6Q&s" },
+        { "name": "Quinoa", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZuBjHZG64t-482RQLh3VB9mzTMlvGSBPdLg&s" }
       ],
       "nutritionGraph": {
         "calories": [2000, 1800, 1600, 1500, 1400, 1300, 1200],
@@ -20,9 +20,9 @@
       "name": "Weight Gain",
       "backgroundImage": "https://img.etimg.com/thumb/msid-94501301,width-900,height-1200,resizemode-6.cms",
       "foods": [
-        { "name": "Oatmeal", "image": "/images/oatmeal.jpg" },
-        { "name": "Chicken Breast", "image": "/images/chicken-breast.jpg" },
-        { "name": "Avocado", "image": "/images/avocado.jpg" }
+        { "name": "Oatmeal", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhBU1SoseWqW963J0I8BN80v4qIRHRVInZiA&s" },
+        { "name": "Chicken Breast", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3bhaHI24fBO03gQhs9OaglmkZmYs0PB5TAA&s" },
+        { "name": "Avocado", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV9bnUYSpenRX8sOR13lhwMy6ehUnp5MRnnw&s" }
       ],
       "nutritionGraph": {
         "calories": [2500, 2700, 3000, 3200, 3500, 3800, 4000],
@@ -36,9 +36,9 @@
       "name": "Protein",
       "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLw-p9454tUkk2MzMiEkVH0JcqesYT8rMtaQ&s",
       "foods": [
-        { "name": "Eggs", "image": "/images/eggs.jpg" },
-        { "name": "Greek Yogurt", "image": "/images/greek-yogurt.jpg" },
-        { "name": "Tofu", "image": "/images/tofu.jpg" }
+        { "name": "Eggs", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGNeKKDZTDzzhOyH-mY_JpoAEtrh0_4x7ag&s" },
+        { "name": "Greek Yogurt", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMNlqC3Kx48iaw-Qt4Olo2dp-TLcAgo4CcWw&s" },
+        { "name": "Tofu", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd7nYvYXDLsm6nqMoLp2GhgoHkHpBqa2HGTQ&s" }
       ],
       "nutritionGraph": {
         "calories": [1800, 1900, 2000, 2100, 2200, 2300, 2400],
@@ -52,9 +52,9 @@
       "name": "Low Carb",
       "backgroundImage": "https://cdn.squats.in/kc_articles/48deaa7c43457fa5ad75e7a9856ec8f9.jpeg",
       "foods": [
-        { "name": "Spinach", "image": "/images/spinach.jpg" },
-        { "name": "Chicken Thigh", "image": "/images/chicken-thigh.jpg" },
-        { "name": "Almonds", "image": "/images/almonds.jpg" }
+        { "name": "Spinach", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAnM569ZgvFTCTjGA-LiQdpamKJiFBKprn7g&s" },
+        { "name": "Chicken Thigh", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfbxxsPivY2j49z2tsIrkg7_gYA-oDppB2mQ&s" },
+        { "name": "Almonds", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSMyvAugdFg3SJfB9Amxa3GygYeHGpLoU3Qw&s" }
       ],
       "nutritionGraph": {
         "calories": [1800, 1700, 1600, 1500, 1400, 1300, 1200],
@@ -68,9 +68,9 @@
       "name": "Keto",
       "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDsMOUgbLxlsuYJBkcHuOpaO6c-Fly3cy88g&s",
       "foods": [
-        { "name": "Cheese", "image": "/images/cheese.jpg" },
-        { "name": "Bacon", "image": "/images/bacon.jpg" },
-        { "name": "Avocado", "image": "/images/avocado.jpg" }
+        { "name": "Cheese", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu49zORJMgDbdAnqvMh-OrHWj1u7iX9x2PtQ&s" },
+        { "name": "Bacon", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXNSPVCA0lTeWkc8qJaYtsbc5hVlzBTN9JKQ&s" },
+        { "name": "Avocado", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV9bnUYSpenRX8sOR13lhwMy6ehUnp5MRnnw&s" }
       ],
       "nutritionGraph": {
         "calories": [2200, 2100, 2000, 1900, 1800, 1700, 1600],
@@ -84,9 +84,9 @@
       "name": "Vegetarian",
       "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpQKoOQYel_joEPWajm6UOKWTlZasc9Sx_hg&s",
       "foods": [
-        { "name": "Lentils", "image": "/images/lentils.jpg" },
-        { "name": "Sweet Potato", "image": "/images/sweet-potato.jpg" },
-        { "name": "Peanut Butter", "image": "/images/peanut-butter.jpg" }
+        { "name": "Lentils", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQgT6bLGaC9qdVNLz2VLkvk3o1OynUBh09Zg&s" },
+        { "name": "Sweet Potato", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcGhH3sld2pgtwuTG3weoYtBfex_HhzRU6nA&s" },
+        { "name": "Peanut Butter", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTtalQsxLpQfQ0ychnqnvkzKYSfDa9PF0iAg&s" }
       ],
       "nutritionGraph": {
         "calories": [1900, 2000, 2100, 2200, 2300, 2400, 2500],
@@ -100,9 +100,9 @@
       "name": "Paleo",
       "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8R7slr4LfwfmKbEXjxzGd5xxOjvUqoVB0-g&s",
       "foods": [
-        { "name": "Grass-fed Beef", "image": "/images/beef.jpg" },
-        { "name": "Blueberries", "image": "/images/blueberries.jpg" },
-        { "name": "Walnuts", "image": "/images/walnuts.jpg" }
+        { "name": "Grass-fed Beef", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTbag5dfw3nzPvDgsERVIIGjniBt-1tWuJrg&s" },
+        { "name": "Blueberries", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQSjqcbDNUzCaDaOj8PYAbGubL0EHVWV241A&s" },
+        { "name": "Walnuts", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrimObwmorI8QC5Z3_NXbLnfAdSIytwceFxg&s" }
       ],
       "nutritionGraph": {
         "calories": [2000, 2100, 2200, 2300, 2400, 2500, 2600],
@@ -116,9 +116,9 @@
       "name": "Mediterranean",
       "backgroundImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqopojW_pjP-CdaxvOsVTF7wp-9k2YnheBiA&s",
       "foods": [
-        { "name": "Olives", "image": "/images/olives.jpg" },
-        { "name": "Hummus", "image": "/images/hummus.jpg" },
-        { "name": "Tomatoes", "image": "/images/tomatoes.jpg" }
+        { "name": "Olives", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ16mpr_9Thx-RmF8yH-hELKVgl8TGou72Aw&s" },
+        { "name": "Hummus", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMxXZC4UwytKkUQ5OgPxonC9Y1VRvEmKL9Vg&s" },
+        { "name": "Tomatoes", "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHWRlVzqIPfnykCAWpZBwAxS2VkhSUStkGFA&s" }
       ],
       "nutritionGraph": {
         "calories": [2000, 2100, 2200, 2300, 2400, 2500, 2600],

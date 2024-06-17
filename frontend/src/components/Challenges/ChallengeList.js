@@ -1,9 +1,8 @@
-// src/components/Challenges/ChallengeList.js
 import React, { useState } from 'react';
-import ChallengeItem from './ChallengeItem';
-import './ChallengeList.css'; // Import CSS file for styling
+import ChallengeItem from '../Challenges/ChallengeItem';
+import './ChallengeList.css';
 
-const ChallengeList = ({ challenges, onDelete, isAdmin }) => {
+const ChallengeList = ({ challenges }) => {
   const [expandedChallengeId, setExpandedChallengeId] = useState(null);
 
   const toggleExercises = (id) => {
@@ -18,10 +17,8 @@ const ChallengeList = ({ challenges, onDelete, isAdmin }) => {
     <div className="challenge-list-container">
       {challenges.map(challenge => (
         <ChallengeItem
-          key={challenge.id}
+          key={challenge._id}
           challenge={challenge}
-          onDelete={onDelete}
-          isAdmin={isAdmin}
           onShowExercises={toggleExercises}
         />
       ))}

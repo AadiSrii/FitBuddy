@@ -6,35 +6,35 @@ const workoutDetails = {
     1: {
       name: 'Mind Workout',
       exercises: [
-        { name: 'Meditation', image: '/images/exercises/meditation.jpg' },
-        { name: 'Reading', image: '/images/exercises/reading.jpg' },
-        { name: 'Puzzles', image: '/images/exercises/puzzles.jpg' },
-        { name: 'Brain Games', image: '/images/exercises/brain-games.jpg' },
-        { name: 'Memory Exercises', image: '/images/exercises/memory-exercises.jpg' },
-        { name: 'Visualization', image: '/images/exercises/visualization.jpg' },
-        { name: 'Mind Mapping', image: '/images/exercises/mind-mapping.jpg' },
-        { name: 'Creative Writing', image: '/images/exercises/creative-writing.jpg' },
-        { name: 'Strategy Games', image: '/images/exercises/strategy-games.jpg' },
-        { name: 'Sudoku', image: '/images/exercises/sudoku.jpg' },
-        { name: 'Chess', image: '/images/exercises/chess.jpg' },
-        { name: 'Crossword Puzzles', image: '/images/exercises/crossword-puzzles.jpg' }
+        { name: 'Meditation', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ68pJ-1sXHMp2rzSdLwIUFknQkzJVXqh5UcQ&s' },
+        { name: 'Reading', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSMSV7ci2K7LQi8x8czMIThSqUijY2Dvzibw&s' },
+        { name: 'Puzzles', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO7yUciaTa5EqjzfomZmijXSgrMOHviimJjg&s' },
+        { name: 'Brain Games', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5SsirE5mPnt6S4DhDNWexcz_OkAbRcw59PQ&s' },
+        { name: 'Memory Exercises', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjiZOtFFoBsYYU4oOGk8XgFp6ErhTUhdMDFg&s' },
+        { name: 'Visualization', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNB_T51IpoxmCTLJzp1O17SgSXV0KRrIj9yA&s' },
+        { name: 'Mind Mapping', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTmOruDOzz-QB4BXKF1gBfdDbN256X2dCC5Q&s' },
+        { name: 'Creative Writing', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyNdW4vSIcOLkUY2yG9RBNAEbe0totvZcJPw&s' },
+        { name: 'Strategy Games', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy1gVLg_7wwpL3qzbM0z5C2ejsWfb0dvbsUw&s' },
+        { name: 'Sudoku', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRW-9RGGVvWwhUeY5afbIhB18NRJoix18vWrg&s' },
+        { name: 'Chess', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIfbX2kLK6FxwgweN6GDoPmw-I4p0emuwPig&s' },
+        { name: 'Crossword Puzzles', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2G9knRGIMgmZgP6cU7pqi88LBovj8Fyl7fA&s' }
       ]
     },
     2: {
       name: 'Yoga Workout',
       exercises: [
-        { name: 'Sun Salutation', image: '/images/exercises/sun-salutation.jpg' },
-        { name: 'Tree Pose', image: '/images/exercises/tree-pose.jpg' },
-        { name: 'Downward Dog', image: '/images/exercises/downward-dog.jpg' },
-        { name: 'Child\'s Pose', image: '/images/exercises/child-pose.jpg' },
-        { name: 'Warrior Pose', image: '/images/exercises/warrior-pose.jpg' },
-        { name: 'Triangle Pose', image: '/images/exercises/triangle-pose.jpg' },
-        { name: 'Bridge Pose', image: '/images/exercises/bridge-pose.jpg' },
-        { name: 'Cobra Pose', image: '/images/exercises/cobra-pose.jpg' },
-        { name: 'Seated Forward Bend', image: '/images/exercises/seated-forward-bend.jpg' },
-        { name: 'Boat Pose', image: '/images/exercises/boat-pose.jpg' },
-        { name: 'Camel Pose', image: '/images/exercises/camel-pose.jpg' },
-        { name: 'Pigeon Pose', image: '/images/exercises/pigeon-pose.jpg' }
+        { name: 'Sun Salutation', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_tmz-Apwflvv1VdMxdYIAy4csHPhu3Qt7AA&s' },
+        { name: 'Tree Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWO-zvyKKGToT8-L7iVsoHfbPG6eNpYYK_bw&s' },
+        { name: 'Downward Dog', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8LAe7MSHCIJU-mgJy98hfo9nL_jvMaYo-Jg&s' },
+        { name: 'Child\'s Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7xwKRl1LfDIFYJuiqvJJyzT8KDQnTHrv4EA&s' },
+        { name: 'Warrior Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWdDUlOGNiympKObTaWoasPmmq03a_gQrnIA&s' },
+        { name: 'Triangle Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfmkuNJh2zWomLBjeEVVMv1B_PNwzbZaBFhw&s' },
+        { name: 'Bridge Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDgkRGQ1azum5ufK9okZcv0IDk9N3PzNjEiA&s' },
+        { name: 'Cobra Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRadobDhfwitNiRdqib4FM4t-PdaFLlMsatBw&s' },
+        { name: 'Seated Forward Bend', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTV1U3wXndCc8698E9xlXqrBc2RKHnGX9tX5Q&s' },
+        { name: 'Boat Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTQtu7LuBOwMOnvwaYb2TeUYcRuvbXg5uhEg&s' },
+        { name: 'Camel Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST1qVO09YDZnBChyVzA3lBzzjQyN7ZDHFlRQ&s' },
+        { name: 'Pigeon Pose', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMuEs9WBGiG0zue-RhLezY_79jmXBF3cAlNg&s' }
       ]
     },
     3: {
@@ -244,18 +244,18 @@ const workoutDetails = {
     15: {
       name: 'Core Workout',
       exercises: [
-        { name: 'Crunches', image: '/images/exercises/crunches.jpg' },
-        { name: 'Russian Twists', image: '/images/exercises/russian-twists.jpg' },
-        { name: 'Leg Raises', image: '/images/exercises/leg-raises.jpg' },
-        { name: 'Plank', image: '/images/exercises/plank.jpg' },
-        { name: 'Mountain Climbers', image: '/images/exercises/mountain-climbers.jpg' },
-        { name: 'Flutter Kicks', image: '/images/exercises/flutter-kicks.jpg' },
-        { name: 'Side Plank', image: '/images/exercises/side-plank.jpg' },
-        { name: 'Bicycle Crunches', image: '/images/exercises/bicycle-crunches.jpg' },
-        { name: 'Hanging Leg Raises', image: '/images/exercises/hanging-leg-raises.jpg' },
-        { name: 'Toe Touches', image: '/images/exercises/toe-touches.jpg' },
-        { name: 'V-Ups', image: '/images/exercises/v-ups.jpg' },
-        { name: 'Sit-Ups', image: '/images/exercises/sit-ups.jpg' }
+        { name: 'Crunches', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2O7_7ggpVPbrPYWF21ffIAHeiWDror_R5ww&s' },
+        { name: 'Russian Twists', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8JuuOkQlZRvqRqLvU1GvKEe1202NuPIdoYw&s' },
+        { name: 'Leg Raises', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG00OmwuKEVosiWHdpBBrHXWLnSz29UEh6eQ&s' },
+        { name: 'Plank', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ372UG1Ou_M1gyx89gFVcr0gk47quSsO8m6w&s' },
+        { name: 'Mountain Climbers', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoG5z9w7F9HXjBcfCbXyCPFV4qhp03pJR9wA&s' },
+        { name: 'Flutter Kicks', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEimTYZx0yGIPlksnJmEYVzhcJ5UUs3OvlAA&s' },
+        { name: 'Side Plank', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLXJmHSnWrROMMdfgCtzyhWIGbukNU2VZ9fw&s' },
+        { name: 'Bicycle Crunches', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2_-RTy6RMUl15z0YzGupEELKFSO-Ue2uDQw&s' },
+        { name: 'Hanging Leg Raises', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKePNK_PuLsN--mWWzUC5m8vBjnHNwzO4noA&s' },
+        { name: 'Toe Touches', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMrbj4RfAHrIdNJqsGBXkU8trzkNuy_Mx43g&s' },
+        { name: 'V-Ups', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4zLJg-DDFferIX50l0HqbneP-p1lAYBYdDQ&s' },
+        { name: 'Sit-Ups', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3IuDMy3Y4VnrJwSQP3e9slohF5Kv5bNjntw&s' }
       ]
     },
     16: {

@@ -1,11 +1,11 @@
-// src/components/Challenges/ChallengeItem.js
 import React, { useState } from 'react';
 
-const ChallengeItem = ({ challenge, onDelete, isAdmin }) => {
+const ChallengeItem = ({ challenge, onShowExercises }) => {
   const [showExercises, setShowExercises] = useState(false);
 
   const toggleShowExercises = () => {
     setShowExercises(!showExercises);
+    onShowExercises(challenge._id);
   };
 
   return (
@@ -15,11 +15,6 @@ const ChallengeItem = ({ challenge, onDelete, isAdmin }) => {
       <button className="show-exercises-btn" onClick={toggleShowExercises}>
         {showExercises ? 'Hide Exercises' : 'Show Exercises'}
       </button>
-      {isAdmin && (
-        <button className="delete-btn" onClick={() => onDelete(challenge.id)}>
-          Delete
-        </button>
-      )}
       {showExercises && (
         <div className="exercise-list">
           <ul>

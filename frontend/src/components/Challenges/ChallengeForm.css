@@ -1,0 +1,87 @@
+/* src/components/Challenges/ChallengeForm.css */
+.challenge-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+  }
+  
+  .challenge-form h3 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .challenge-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  .challenge-form input,
+  .challenge-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .challenge-form button {
+    background: #28a745;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .challenge-form button:hover {
+    background: #218838;
+  }
+  
+  .exercises {
+    margin-top: 20px;
+  }
+  
+  .exercise-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .exercise-item input {
+    flex: 1;
+  }
+  
+  .exercise-item button {
+    background: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .exercise-item button:hover {
+    background: #c82333;
+  }
+  
+  .challenge-form .exercises button {
+    background: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .challenge-form .exercises button:hover {
+    background: #0056b3;
+  }
+  
