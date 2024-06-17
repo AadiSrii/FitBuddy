@@ -1,17 +1,16 @@
-import React, { useState } from "react";
-import { Box, Input, Button, Heading, Center, Flex, useToast } from "@chakra-ui/react";
-import axios from "axios";
-import { FaRegTimesCircle } from "react-icons/fa";
-import { FaRegCircleCheck } from "react-icons/fa6";
-import { usersUrl } from "../utils/server";
-
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { Box, Input, Button, Heading, Center, Flex, useToast, Select } from '@chakra-ui/react';
+import axios from 'axios';
+import { FaRegTimesCircle} from 'react-icons/fa';
+import { FaRegCircleCheck } from 'react-icons/fa6';
+import { useNavigate } from 'react-router-dom';
 
 export function Signup() {
   const [userData, setUserData] = useState({
-    u_name: "",
-    email: "",
-    password: "",
+    email: '',
+    username: '',
+    password: '',
+    role: '', // Added role state
   });
   const [passBox, setPassBox] = useState(false);
   const [passwordValid, setPasswordValid] = useState({
@@ -31,7 +30,7 @@ export function Signup() {
       [name]: value,
     });
 
-    if (name === "password") {
+    if (name === 'password') {
       setPassBox(true);
       setPasswordValid({
         length: value.length >= 8,
@@ -43,10 +42,6 @@ export function Signup() {
     }
   };
 
-  const checkAuthenticUser = (data) => {
-    return data.find((element) => element.email === userData.email);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (
@@ -54,36 +49,33 @@ export function Signup() {
       passwordValid.lowercase &&
       passwordValid.numbers &&
       passwordValid.uppercase &&
-      passwordValid.specialChar
+      passwordValid.specialChar &&
+      userData.role // Ensure role is selected
     ) {
       axios
-        .get(usersUrl)
+        .post('https://fitbuddy-h75f.onrender.com/api/auth/register', userData)
         .then((res) => {
-          const user = checkAuthenticUser(res.data);
-          if (user) {
-            toast({
-              title: "Already you have an account, Please login",
-              isClosable: true,
-            });
-          } else {
-            axios
-              .post(usersUrl, userData)
-              .then((res) => {
-                toast({
-                  title: "Account created successfully.",
-                  status: "success",
-                  duration: 9000,
-                  isClosable: true,
-                });
-                navigate("/login");
-              })
-              .catch((error) => console.log(error));
-          }
+          toast({
+            title: 'Account created successfully.',
+            status: 'success',
+            duration: 9000,
+            isClosable: true,
+          });
+          navigate('/login');
         })
-        .catch((error) => console.log(error));
+        .catch((error) => {
+          console.log(error);
+          toast({
+            title: 'Error creating account. Please try again.',
+            status: 'error',
+            duration: 9000,
+            isClosable: true,
+          });
+        });
     } else {
       toast({
-        title: "Please enter valid email and password",
+        title: 'Please fill all fields correctly.',
+        status: 'error',
         duration: 9000,
         isClosable: true,
       });
@@ -93,53 +85,76 @@ export function Signup() {
   return (
     <Center h="100vh" w="100vw">
       <Box maxW="md" mx="auto" mt="8">
-        <Heading as="h1" mb="4" textAlign="center" size="lg">
+        <Heading as="h2" mb="4" textAlign="center" size="lg">
           Sign Up
         </Heading>
         <Box
           mt="30px"
           bg="white"
-          p="8"
+          p="30"
+          pt="40px"
           rounded="lg"
           boxShadow="rgba(0, 0, 0, 0.35) 0px 5px 15px"
         >
           <form onSubmit={handleSubmit}>
             <Input
-              mb="4"
-              name="u_name"
+              mb="14"
+              w="350px"
+              height="40px"
+              name="username"
               placeholder="Username"
               onChange={handleChange}
-              value={userData.u_name}
+              value={userData.username}
             />
+            <br />
             <Input
-              mb="4"
+              mb="14"
+              w="350px"
+              height="40px"
               name="email"
               type="email"
               placeholder="Email"
               onChange={handleChange}
               value={userData.email}
             />
+            <br />
             <Input
-              mb="4"
+              mb="14"
               name="password"
               type="password"
+              w="350px"
+              height="40px"
               placeholder="Password"
               onChange={handleChange}
               value={userData.password}
             />
+            <br />
+            <Select
+              mb="14"
+              w="350px"
+              height="40px"
+              name="role"
+              placeholder="Select Role"
+              onChange={handleChange}
+              value={userData.role}
+            >
+              <option value="user">User</option>
+              <option value="admin">Admin</option>
+            </Select>
+            <br />
 
             {passBox && (
-              <div style={{ paddingBottom: "20px" }}>
+              <div style={{ paddingBottom: '20px' }}>
                 <Flex alignItems="center" h="30px">
                   {passwordValid.length ? (
-                    <FaRegCircleCheck style={{ color: "green" }} />
+                    <FaRegCircleCheck style={{ color: 'green' }} />
                   ) : (
-                    <FaRegTimesCircle style={{ color: "red" }} />
+                    <FaRegTimesCircle style={{ color: 'red' }} />
                   )}
                   <p
                     style={{
-                      color: passwordValid.length ? "green" : "red",
-                      paddingLeft: "2%",
+                      color: passwordValid.length ? 'green' : 'red',
+                      paddingLeft: '2%',
                     }}
                   >
                     Minimum 8 characters
@@ -147,14 +162,14 @@ export function Signup() {
                 </Flex>
                 <Flex alignItems="center" h="30px">
                   {passwordValid.lowercase ? (
-                    <FaRegCircleCheck style={{ color: "green" }} />
+                    <FaRegCircleCheck style={{ color: 'green' }} />
                   ) : (
-                    <FaRegTimesCircle style={{ color: "red" }} />
+                    <FaRegTimesCircle style={{ color: 'red' }} />
                   )}
                   <p
                     style={{
-                      color: passwordValid.lowercase ? "green" : "red",
-                      paddingLeft: "2%",
+                      color: passwordValid.lowercase ? 'green' : 'red',
+                      paddingLeft: '2%',
                     }}
                   >
                     At least one lowercase letter
@@ -162,14 +177,14 @@ export function Signup() {
                 </Flex>
                 <Flex alignItems="center" h="30px">
                   {passwordValid.uppercase ? (
-                    <FaRegCircleCheck style={{ color: "green" }} />
+                    <FaRegCircleCheck style={{ color: 'green' }} />
                   ) : (
-                    <FaRegTimesCircle style={{ color: "red" }} />
+                    <FaRegTimesCircle style={{ color: 'red' }} />
                   )}
                   <p
                     style={{
-                      color: passwordValid.uppercase ? "green" : "red",
-                      paddingLeft: "2%",
+                      color: passwordValid.uppercase ? 'green' : 'red',
+                      paddingLeft: '2%',
                     }}
                   >
                     At least one uppercase letter
@@ -177,14 +192,14 @@ export function Signup() {
                 </Flex>
                 <Flex alignItems="center" h="30px">
                   {passwordValid.numbers ? (
-                    <FaRegCircleCheck style={{ color: "green" }} />
+                    <FaRegCircleCheck style={{ color: 'green' }} />
                   ) : (
-                    <FaRegTimesCircle style={{ color: "red" }} />
+                    <FaRegTimesCircle style={{ color: 'red' }} />
                   )}
                   <p
                     style={{
-                      color: passwordValid.numbers ? "green" : "red",
-                      paddingLeft: "2%",
+                      color: passwordValid.numbers ? 'green' : 'red',
+                      paddingLeft: '2%',
                     }}
                   >
                     At least one number
@@ -192,14 +207,14 @@ export function Signup() {
                 </Flex>
                 <Flex alignItems="center" h="30px">
                   {passwordValid.specialChar ? (
-                    <FaRegCircleCheck style={{ color: "green" }} />
+                    <FaRegCircleCheck style={{ color: 'green' }} />
                   ) : (
-                    <FaRegTimesCircle style={{ color: "red" }} />
+                    <FaRegTimesCircle style={{ color: 'red' }} />
                   )}
                   <p
                     style={{
-                      color: passwordValid.specialChar ? "green" : "red",
-                      paddingLeft: "2%",
+                      color: passwordValid.specialChar ? 'green' : 'red',
+                      paddingLeft: '2%',
                     }}
                   >
                     At least one special character
@@ -207,15 +222,30 @@ export function Signup() {
                 </Flex>
               </div>
             )}
-            <Button type="submit" colorScheme="blue" width="full">
+            <Button
+              type="submit"
+              colorScheme="blue"
+              width="350px"
+              borderRadius="5px"
+              color="white"
+              backgroundColor="skyblue"
+              border="none"
+              height="40px"
+              marginTop="10px"
+            >
               Sign Up
             </Button>
           </form>
           <Box mt={4} textAlign="center">
             <Button
               variant="link"
-              color="blue.500"
-              onClick={() => navigate("/login")}
+              color="skyblue"
+              fontWeight="600"
+              fontSize="18px"
+              border="lightGray"
+              backgroundColor="white"
+              marginTop="15px"
+              onClick={() => navigate('/login')}
             >
               Login
             </Button>

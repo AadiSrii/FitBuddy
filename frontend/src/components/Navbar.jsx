@@ -1,17 +1,29 @@
-import React from "react";
+
+import React, { useState } from "react";
 import { Link } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa'; 
 
 export const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
     return (
-        <div style={{ display: "flex", gap: "40px", borderBottom: "1px solid black", alignItems: "center", justifyContent:"flex-start", backgroundColor: "black", height: "70px",paddingLeft:"100px" }}>
-            <Link to="/"><img src="../images/logo.jpeg" alt="FitBuddy-Logo" style={{ height: "50px" }}/></Link>
-            <Link to="/workout" style={{textDecoration:"none", color:"white", fontSize:"16px", marginLeft:"400px"}}>Workouts</Link>
-            <Link to="/AllRoutes" style={{textDecoration:"none", color:"white", fontSize:"16px", marginLeft:"10px"}}>Routes</Link>
-            <Link to="/Community" style={{textDecoration:"none", color:"white", fontSize:"16px", marginLeft:"10px"}}>Community</Link>
-            <Link to="/Shop" style={{textDecoration:"none", color:"white", fontSize:"16px", marginLeft:"10px"}}>Shop</Link>
-            <Link to="/Login" style={{textDecoration:"none", color:"white", fontSize:"16px", marginLeft:"200px"}}><button style={{width:"80px",height:"42px",fontWeight:"800", fontSize:"14px"}}>LOG IN</button></Link>
-            <Link to="/Signup" style={{textDecoration:"none", color:"white", fontSize:"16px"}}><button style={{width:"100px",height:"42px",fontWeight:"800", fontSize:"14px"}}>SIGN UP</button></Link>
-            
+        <div className="nav">
+            <Link to="/"><img src="../images/logo.jpeg" alt="FitBuddy-Logo" className="logo"/></Link>
+            <div className={`nav-links ${isOpen ? "open" : ""}`}>
+                <Link to="/workout" className="nav-link">Workouts</Link>
+                <Link to="/AllRoutes" className="nav-link">Routes</Link>
+                <Link to="/Community" className="nav-link">Community</Link>
+                <Link to="/Shop" className="nav-link">Shop</Link>
+                <Link to="/Login" className="nav-link"><button className="nav-button">LOG IN</button></Link>
+                <Link to="/Signup" className="nav-link"><button className="nav-button signup-button">SIGN UP</button></Link>
+            </div>
+            <div className="hamburger" onClick={toggleMenu}>
+                {isOpen ? <FaTimes /> : <FaBars />}
+            </div>
         </div>
     );
 };
