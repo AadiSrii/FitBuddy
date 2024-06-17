@@ -8,6 +8,6 @@ const challenges = express.Router();
 
 // Route to add a new challenge
 challenges.post('/challenges',authMiddleware('admin'), addChallenge);
-challenges.get('/challenges',authMiddleware('admin'), getChallenge);
+challenges.get('/challenges', getChallenge);
 
 export default challenges;

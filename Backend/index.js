@@ -13,7 +13,7 @@ app.use(cors());
 app.use('/api/auth', router); 
 app.use('/api/dashboard', DashboardRouter)
 app.use("/api/auth", nutritionRouter)
-app.use("/api/admin/challenges",challenges);
+app.use("/api/admin",challenges);
 app.use('/api/admin/users', adminRouter);
 app.get("/", (req,res)=>{
 res.send("This is home route")
