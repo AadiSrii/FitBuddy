@@ -1,0 +1,76 @@
+/* MetricsHistory.css */
+
+.metrics-history-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .button-group {
+    margin-bottom: 20px;
+  }
+  
+  .graph-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+  }
+  
+  .graph-button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .graph-button:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .graph-section {
+    margin-top: 40px;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .graph-section h3 {
+    color: #333;
+  }
+  
+  .insufficient-data {
+    font-size: 18px;
+    color: #ff0000;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .metrics-history-container {
+      padding: 15px;
+    }
+    
+    .title {
+      font-size: 20px;
+    }
+  
+    .graph-button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  }
+  
