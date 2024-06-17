@@ -1,6 +1,6 @@
 // controllers/userController.js
 
-import Challenge from "../models/challenges";
+import Challenge from "../models/challenges.js";
 
 
 
