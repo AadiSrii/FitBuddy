@@ -9,7 +9,9 @@ const NutritionCalculator = () => {
   const [caloriesIntake, setCaloriesIntake] = useState(null);
 
   // Example token, replace with your actual token handling logic
-  const verificationToken = JSON.parse(localStorage.getItem("fitbuddy")).token;
+  let token =  JSON.parse(localStorage.getItem("fitbuddy"))
+
+  const verificationToken = token.token;
 
   const handleChange = (e) => {
     setFoodName(e.target.value);

@@ -1,0 +1,80 @@
+/* Navbar.css */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #333;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .nav-links.open {
+    transform: translateX(0);
+  }
+  
+  .nav-links ul {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    color: #f0f0f0;
+  }
+  
+  .nav-link.active {
+    color: #007bff; /* or any color you want for active links */
+  }
+  
+  .nav-button {
+    width: 8vw;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .signup-button {
+    background-color: #28a745;
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #333;
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(-100%);
+    }
+  
+    .nav-links.open {
+      transform: translateX(0);
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  
