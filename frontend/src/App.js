@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> c94b2db9042cee308db268ddcdd348196a3202b5
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Navbar } from "./components/Navbar";
@@ -24,6 +28,10 @@ function App() {
         <Route path="/Benefits" element={<Benefits/>} />
       </Routes>
     </Router>
+<<<<<<< HEAD
+=======
+
+>>>>>>> c94b2db9042cee308db268ddcdd348196a3202b5
   );
 }
 
