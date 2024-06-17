@@ -74,12 +74,14 @@ const BMICalculator = () => {
 
   const handleSetGoal = async () => {
     try {
+
+      const fitbuddyData = JSON.parse(localStorage.getItem("fitbuddy"));
       const response = await axios.post(
         'https://fitbuddy-h75f.onrender.com/api/dashboard/update',
         { caloriesIntake: form.dailyCalories },
         {
           headers: {
-            'x-auth-token': 'your-auth-token'
+            'x-auth-token': fitbuddyData.token
           }
         }
       );

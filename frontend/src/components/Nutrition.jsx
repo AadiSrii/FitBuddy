@@ -9,7 +9,7 @@ const NutritionCalculator = () => {
   const [caloriesIntake, setCaloriesIntake] = useState(null);
 
   // Example token, replace with your actual token handling logic
-  const verificationToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY2YzMzZTZmM2NhMWExYTMwNjYzMGNkIiwidXNlcm5hbWUiOiJUdXNoYXIgQmlzaHQiLCJlbWFpbCI6InR1c2hhcmJpc2h0MDIxNkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzE4MzY3MjA2LCJleHAiOjE3MTg1NDcyMDZ9.6XgeiLRucXUFYiaKZnGVKArxHRADr32Zlg_IRM7AC5E";
+  const verificationToken = JSON.parse(localStorage.getItem("fitbuddy")).token;
 
   const handleChange = (e) => {
     setFoodName(e.target.value);

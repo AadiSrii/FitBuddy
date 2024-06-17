@@ -13,7 +13,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
-        const token = localStorage.getItem('token'); // Assuming you store your JWT in localStorage
+
+       
+        const token = JSON.parse(localStorage.getItem("fitbuddy")).token; // Assuming you store your JWT in localStorage
         const config = {
           headers: {
             'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ function BurnedCalories() {
   const [caloriesBurned, setCaloriesBurned] = useState(null);
 
   // Assuming the verification token is hardcoded or fetched securely
-  const verificationToken = 'your_hardcoded_verification_token';
+  const fitbuddyData = JSON.parse(localStorage.getItem("fitbuddy"));
 
   const calculateCalories = () => {
     const MET = getMETValue(activity);
@@ -23,7 +23,7 @@ function BurnedCalories() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-auth-token': verificationToken
+          'x-auth-token': fitbuddyData.token
         },
         body: JSON.stringify({ caloriesBurned })
       });

@@ -15,9 +15,11 @@ const NutritionPieChart = () => {
 
   const fetchTotalNutritionData = async () => {
     try {
+     let token = JSON.parse(localStorage.getItem("fitbuddy")).token;
+
       const response = await axios.get('http://localhost:3000/api/auth/nutrition', {
         headers: {
-          'x-auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY2YzMzZTZmM2NhMWExYTMwNjYzMGNkIiwidXNlcm5hbWUiOiJUdXNoYXIgQmlzaHQiLCJlbWFpbCI6InR1c2hhcmJpc2h0MDIxNkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzE4MzY3MjA2LCJleHAiOjE3MTg1NDcyMDZ9.6XgeiLRucXUFYiaKZnGVKArxHRADr32Zlg_IRM7AC5E"
+          'x-auth-token':token 
         }
       });
       console.log(response.data);

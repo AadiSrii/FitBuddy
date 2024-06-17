@@ -9,7 +9,8 @@
 // import { Signup } from "./pages/Signup";
 
 
-import Track from "./pages/track.jsx";
+import SwitchComponent from "./components/MainDashboard.jsx";
+
 
 
 
@@ -35,13 +36,9 @@ function App() {
     //   </Routes>
     // </Router>
     <>
-  <div style={{ backgroundImage: `url("https://picjj.com/images/2024/06/15/W7sYuH.png")`, backgroundSize: "cover", backgroundPosition:"center", height:"100vh", overflow:"hidden",backgroundAttachment:"fixed" ,
-      }}>
-  <Track />
-  </div>
-   
-    
-   
+ 
+  <SwitchComponent/>
+ 
   
     </>
   );
