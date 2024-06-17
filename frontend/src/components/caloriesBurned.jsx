@@ -19,7 +19,7 @@ function BurnedCalories() {
 
   const addToDashboard = async () => {
     try {
-      const response = await fetch('link/api/dashboard/update', {
+      const response = await fetch('https://fitbuddy-h75f.onrender.com/api/dashboard/update', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

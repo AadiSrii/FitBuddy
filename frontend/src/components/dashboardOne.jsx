@@ -13,15 +13,15 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchMetrics = async () => {
       try {
-        // const token = localStorage.getItem('token'); // Assuming you store your JWT in localStorage
+        const token = localStorage.getItem('token'); // Assuming you store your JWT in localStorage
         const config = {
           headers: {
             'Content-Type': 'application/json',
-            'x-auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY2YzMzZTZmM2NhMWExYTMwNjYzMGNkIiwidXNlcm5hbWUiOiJUdXNoYXIgQmlzaHQiLCJlbWFpbCI6InR1c2hhcmJpc2h0MDIxNkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzE4MzY3MjA2LCJleHAiOjE3MTg1NDcyMDZ9.6XgeiLRucXUFYiaKZnGVKArxHRADr32Zlg_IRM7AC5E",
+            'x-auth-token': token,
           },
         };
 
-        const res = await axios.get('http://localhost:3000/api/dashboard/metrics/daily', config);
+        const res = await axios.get('https://fitbuddy-h75f.onrender.com/api/dashboard/metrics/daily', config);
         setMetrics(res.data);
       } catch (err) {
         console.error(err.response.data);

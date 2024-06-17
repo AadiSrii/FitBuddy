@@ -30,7 +30,7 @@ const NutritionCalculator = () => {
 
   const addToDashboard = async (calories) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/dashboard/update', {
+      const response = await axios.post('https://fitbuddy-h75f.onrender.com/api/dashboard/update ', {
         caloriesIntake: calories
       }, {
         headers: {
@@ -51,7 +51,7 @@ const NutritionCalculator = () => {
 
   const addNutritionToDashboard = async (nutritionItem) => {
     try {
-      const response = await axios.post('http://localhost:3000/api/auth/nutrition', {
+      const response = await axios.post('https://fitbuddy-h75f.onrender.com/api/auth/nutrition', {
         nutritionItem: nutritionItem
       }, {
         headers: {

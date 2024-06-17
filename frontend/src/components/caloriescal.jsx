@@ -75,7 +75,7 @@ const BMICalculator = () => {
   const handleSetGoal = async () => {
     try {
       const response = await axios.post(
-        'link/api/dashboard/update',
+        'https://fitbuddy-h75f.onrender.com/api/dashboard/update',
         { caloriesIntake: form.dailyCalories },
         {
           headers: {

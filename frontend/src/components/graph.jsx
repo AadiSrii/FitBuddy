@@ -19,7 +19,7 @@ const MetricsHistory = () => {
           },
         };
 
-        const res = await axios.get('http://localhost:3000/api/dashboard/metrics', config);
+        const res = await axios.get('https://fitbuddy-h75f.onrender.com/api/dashboard/metrics', config);
         setMetricsHistory(res.data);
       } catch (err) {
         console.error(err.response.data);
