@@ -34,7 +34,7 @@ export const Home = () => {
 
           />
           <Carousel.Caption>
-            <h2>Fitness marketplace</h2>
+            <h2 className='head-1'>Fitness marketplace</h2>
             <div className='loginBox'>
               <Link to="/Signup"> <button>SIGN UP</button></Link><br />
               <samp >Already a member? </samp>
@@ -64,37 +64,43 @@ export const Home = () => {
 
       {/* ******************** 2 *********************** */}
 
-      <div style={{ width: "1515px", height: "580px", display: "flex", paddingTop: "100px", paddingLeft: "150px", gap: "20px" }}>
-        <div style={{ width: "660px", height: "400px", backgroundImage: "url(https://media.istockphoto.com/id/615883260/photo/difficult-doesnt-mean-impossible.jpg?s=612x612&w=0&k=20&c=cAEJvjTFRuF9H9gRov1Aj4X4I6xV6DSvMwWsf-2IW-0=)", backgroundPosition: "center", backgroundSize: "cover" }}></div>
-        <Link to="/Login"><button style={{ backgroundColor: "black", color: "white", fontWeight: "600", height: "45px", width: "280px", border: "none", marginTop: "30px", borderRadius: "25px" }}>GET STARTED</button></Link>
-
-
-        <div style={{ width: "660px", height: "400px", backgroundImage: "url(http://fitbuddy.unaux.com/wp-content/uploads/2023/03/bicycle-crunch-1.webp)", backgroundPosition: "center", backgroundSize: "cover" }}>
-
-        </div>
+  <div className='section2'>
+      <div className='part1'>
+        <div className='section2Img1'> </div>
+        <h5>Men</h5>
+        <span>exercises , fitness tips , routine and more</span>
+        <Link to="/Login"><button>LET'S GO - </button></Link>
+      </div>
+      <div className='part2'>
+        <div className='section2Img2'> </div>
+        <h5>Women</h5>
+        <span>exercises , posture , fitness tips , routine and more</span>
+        <Link to="/Login"><button>LET'S GO - </button></Link>
       </div>
 
-      {/*  */}
+      </div>
+
+      {/*  3  */}
       <hr />
 
       <div className='small-carousel'>
         <Carousel className='secondCarousel'>
           <Carousel.Item>
-            <div style={{ width: "1130px", height: "370px", border: "1px solid", backgroundColor: "black", padding: "25px", marginBottom: "20px", display: "flex" }}>
-              <img style={{ width: "600px", height: "320px" }} src="https://challenge-assets.mapmyfitness.com/kjizize.jpg" alt="" />
-              <div style={{ width: "400px", height: "320px" }}>
-                <p style={{ color: "white", fontSize: "22px", fontWeight: "bold", marginTop: "110px", marginLeft: "40px", letterSpacing: "-05" }}>YOU VS THE YEAR 2024</p>
-                <p style={{ color: "white", marginLeft: "40px" }}>Log 1,024 km in 2024</p>
+            <div className='sc-box1'>
+              <img src="https://challenge-assets.mapmyfitness.com/kjizize.jpg" alt="" />
+              <div className='sc-test1'>
+                <p className='p1-text'>YOU VS THE YEAR 2024</p>
+                <p className='p2-text'>Log 1,024 km in 2024</p>
               </div>
             </div>
 
           </Carousel.Item>
           <Carousel.Item>
-            <div style={{ width: "1130px", height: "370px", border: "1px solid", backgroundColor: "black", padding: "25px", marginBottom: "20px", display: "flex" }}>
-              <img style={{ width: "600px", height: "320px" }} src="https://challenge-assets.mapmyfitness.com/a83u9w9.jpg" alt="" />
-              <div style={{ width: "400px", height: "320px" }}>
-                <p style={{ color: "white", fontSize: "22px", fontWeight: "bold", marginTop: "110px", marginLeft: "40px", letterSpacing: "-05" }}>WORKOUT WARRIOR CHALLENGE</p>
-                <p style={{ color: "white", marginLeft: "40px" }}>Log 48 workouts in 3 months to complete the Workout Warrior Challenge.</p>
+            <div className='sc-box2'>
+              <img src="https://challenge-assets.mapmyfitness.com/a83u9w9.jpg" alt="" />
+              <div className='sc-test2'>
+                <p className='p1-text'>WORKOUT WARRIOR CHALLENGE</p>
+                <p className='p2-text'>Log 48 workouts in 3 months to complete the Workout Warrior Challenge.</p>
               </div>
             </div>
           </Carousel.Item>
@@ -103,9 +109,9 @@ export const Home = () => {
 
       {/*  */}
 
-      <p style={{ fontSize: "50px", fontWeight: "800", letterSpacing: "-2px", marginTop: "50px", marginLeft: "550px" }}>PUSH YOUR LIMITS</p>
-      <p style={{ marginTop: "20px", marginLeft: "550px" }}>Hit milestones and PR’s by taking on a new challenge every month.</p>
-      <Link to="/Community"><button style={{ backgroundColor: "black", color: "white", fontWeight: "600", height: "45px", width: "200px", marginLeft: "650px", marginTop: "20px", borderRadius: "5px", marginBottom: "50px" }}>JOIN A CHALLENGE</button></Link>
+      <p className='push' >PUSH YOUR LIMITS</p>
+      <p className='hit'>Hit milestones and PR’s by taking on a new challenge every month.</p>
+      <Link to="/Community"><button className='joinBtn'>JOIN A CHALLENGE</button></Link>
 
 
 

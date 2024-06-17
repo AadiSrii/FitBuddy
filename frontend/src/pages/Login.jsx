@@ -1,17 +1,25 @@
 import React, { useState } from "react";
-import { Center, Box, Heading, Input, Button } from "@chakra-ui/react";
+import {
+  Center,
+  Box,
+  Heading,
+  Input,
+  Button,
+  IconButton,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import axios from "axios";
-import { usersUrl } from "../utils/server";
-
 import { useNavigate } from "react-router-dom";
 
 export function Login() {
   const navigate = useNavigate();
-  const [adminPass, setAdminPass] = useState(false);
-  const [userPass, setUserPass] = useState(false);
+  const [userData, setUserData] = useState({ email: "", password: "" }); // Renamed pass to password
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
-  const [userData, setUserData] = useState({ email: "", pass: "" });
-  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData({
@@ -20,38 +28,25 @@ export function Login() {
     });
   };
 
-  const checkAuthenticUser = (data) => {
-    return data.find(
-      (element) =>
-        element.email === userData.email && element.password === userData.pass
-    );
+  const handleTogglePassword = () => {
+    setShowPassword(!showPassword);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (userData.email === "admin@gmail.com") {
-      if (userData.pass === "admin") {
-        localStorage.setItem("admin", "1");
-        navigate("/admin");
-      } else {
-        setAdminPass(true);
-      }
-    } else {
-      axios
-        .get(usersUrl)
-        .then((res) => {
-          const user = checkAuthenticUser(res.data);
-          if (user) {
-            console.log("User is valid:", user);
-            localStorage.setItem("user_id", user.id);
-            navigate("/");
-          } else {
-            setUserPass(true);
-            console.log("Invalid credentials");
-          }
-        })
-        .catch((error) => console.log(error));
-    }
+    setLoading(true);
+    axios
+      .post("https://fitbuddy-h75f.onrender.com/api/auth/login", userData)
+      .then((res) => {
+        setLoading(false);
+        const { token, role } = res.data;
+        localStorage.setItem("fitbuddy", JSON.stringify({ token, role })); // Store under "fitbuddy" key
+        navigate("/");
+      })
+      .catch((error) => {
+        setLoading(false);
+        setError("Invalid credentials. Please try again.");
+      });
   };
 
   return (
@@ -79,31 +74,56 @@ export function Login() {
               value={userData.email}
             />
             <br />
-            <Input
-              mb="12"
-              name="pass"
-              type="password"
-              placeholder="Password"
-              height="40px"
-              width="350px"
-             
-              onChange={handleChange}
-              value={userData.pass}
-            />
-            
-            {adminPass && (
-              <p style={{ paddingBottom: "10px", color: "red" }}>
-                Enter correct password
-              </p>
-            )}
-            {userPass && (
-              <p style={{ paddingBottom: "10px", color: "red" }}>
-                Please enter valid credential
-              </p>
+            <InputGroup size="md">
+              <Input
+                mb="12"
+                name="password" // Changed from "pass" to "password"
+                type={showPassword ? "text" : "password"} // Toggle between text and password type
+                placeholder="Password"
+                height="40px"
+                width="350px"
+                value={userData.password} // Updated to "password"
+                onChange={handleChange}
+              />
+              <InputRightElement
+                width="3rem"
+                display="flex"
+                alignItems="center"
+                justifyContent="center"
+                position="absolute"
+                right="0"
+                height="100%"
+              >
+                <IconButton
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                  variant="unstyled"
+                  onClick={handleTogglePassword}
+                  icon={showPassword ? <ViewOffIcon /> : <ViewIcon />}
+                  _focus={{ boxShadow: "none" }}
+                  marginBottom="10px"
+                  border="none"
+                  backgroundColor="white"
+                />
+              </InputRightElement>
+            </InputGroup>
+            {error && (
+              <p style={{ paddingBottom: "10px", color: "red" }}>{error}</p>
             )}
             <br />
-            <Button type="submit" backgroundColor="skyblue" width="350px" height="40px" border="none" borderRadius="5px" fontWeight="600" fontSize="17px" color="white" marginTop="15px">
-              Login
+            <Button
+              type="submit"
+              backgroundColor="skyblue"
+              width="350px"
+              height="40px"
+              border="none"
+              borderRadius="5px"
+              fontWeight="600"
+              fontSize="17px"
+              color="white"
+              marginTop="15px"
+              disabled={loading}
+            >
+              {loading ? "Logging in..." : "Login"}
             </Button>
           </form>
           <Box mt={4} textAlign="center">
@@ -113,7 +133,7 @@ export function Login() {
               fontSize="17px"
               fontWeight="600"
               border="none"
-              backgroundColor='white'
+              backgroundColor="white"
               marginTop="15px"
               onClick={() => navigate("/signup")}
             >

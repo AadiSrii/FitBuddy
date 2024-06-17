@@ -15,7 +15,7 @@ export const Footer = () => {
                     </div>
 
                 </div>
-                <div>
+                <div className="help">
                     <h6>Help</h6>
                     <Link to="/Login" style={{ textDecoration: "none", color: "black" }}> <div className="pointer">Log In/Register</div></Link>
                     <div className="pointer">Privacy Center</div>
@@ -24,14 +24,14 @@ export const Footer = () => {
 
                 </div>
 
-                <div>
+                <div className="about">
                     <h6>About</h6>
                     <div className="pointer">Contact Us</div>
                     <div className="pointer">Join Our Team</div>
                     <div className="pointer">Shop Under Armour</div>
                 </div>
 
-                <div>
+                <div className="connect">
                     <h6 className="pointer">Connect</h6>
                     <div className="pointer">Instagram</div>
                     <div className="pointer">Facebook</div>
@@ -48,6 +48,7 @@ export const Footer = () => {
                <span className="cookie">/ Cookie Policy</span> 
                <span className="pre">Cookie Preferences</span>
                <span className="ad"> / AdChoices</span>  <br/> 
+               <br/>
                <span className="do">/ Do Not Sell or Share My Personal Information</span>
 
             </div>
