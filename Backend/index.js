@@ -1,9 +1,11 @@
 import express from 'express';
-import challenges from './src/routes/addChallenges.js';
+
 import dotenv from 'dotenv';
 import router from './src/routes/authRoutes.js';
 import connectDB from './src/configs/db.js';
 import cors from "cors"
+
+import challenges from './src/routes/addChallenges.js'
 dotenv.config();
 
 const app = express();
@@ -26,6 +28,7 @@ import DashboardRouter from './src/routes/dashboardroutes.js';
 import nutritionRouter from './src/routes/nutritionrouter.js';
 import adminRouter from './src/routes/userCount.js';
 import Nutrition from './src/models/nutrition.js';
+
 
 
 
@@ -93,6 +96,6 @@ cron.schedule('59 23 * * *', async () => {
 });
 
 app.listen(PORT, async() => {
-  await connectDB();
+await connectDB();
   console.log(`Server started on port ${PORT}`);
 });

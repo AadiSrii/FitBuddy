@@ -15,11 +15,11 @@ const NutritionPieChart = () => {
 
   const fetchTotalNutritionData = async () => {
     try {
-     let token = JSON.parse(localStorage.getItem("fitbuddy")).token;
+     let token = JSON.parse(localStorage.getItem("fitbuddy"));
 
       const response = await axios.get('http://localhost:3000/api/auth/nutrition', {
         headers: {
-          'x-auth-token':token 
+          'x-auth-token':token.token 
         }
       });
       console.log(response.data);

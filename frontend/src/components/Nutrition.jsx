@@ -9,16 +9,20 @@ const NutritionCalculator = () => {
   const [caloriesIntake, setCaloriesIntake] = useState(null);
 
   // Example token, replace with your actual token handling logic
-  const verificationToken = JSON.parse(localStorage.getItem("fitbuddy")).token;
+  
+  
+
+
 
   const handleChange = (e) => {
     setFoodName(e.target.value);
   };
 
+
   const fetchNutritionData = async () => {
     try {
       const response = await axios.get(`https://api.api-ninjas.com/v1/nutrition?query=${foodName}`, {
-        headers: { 'X-Api-Key': 'eB4OXzifHLlkduM+zBRDbg==2aO8Idqe2DeeBv1u' },
+        headers: { 'X-Api-Key': 'p4d3lHqfh/ekB7LNNcLbFw==xha2tM9pVK6Lnkgd' },
       });
       setNutritionData(response.data);
       setError('');
@@ -29,6 +33,10 @@ const NutritionCalculator = () => {
   };
 
   const addToDashboard = async (calories) => {
+    // let token =  JSON.parse(localStorage.getItem("fitbuddy"))
+    let choken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY2YzMzZTZmM2NhMWExYTMwNjYzMGNkIiwidXNlcm5hbWUiOiJUdXNoYXIgQmlzaHQiLCJlbWFpbCI6InR1c2hhcmJpc2h0MDIxNkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzE4MzY3MjA2LCJleHAiOjE3MTg1NDcyMDZ9.6XgeiLRucXUFYiaKZnGVKArxHRADr32Zlg_IRM7AC5E"
+    const verificationToken = choken;
+    console.log()
     try {
       const response = await axios.post('https://fitbuddy-h75f.onrender.com/api/dashboard/update ', {
         caloriesIntake: calories
@@ -50,13 +58,17 @@ const NutritionCalculator = () => {
   };
 
   const addNutritionToDashboard = async (nutritionItem) => {
+    
+    
+    
+    
     try {
       const response = await axios.post('https://fitbuddy-h75f.onrender.com/api/auth/nutrition', {
         nutritionItem: nutritionItem
       }, {
         headers: {
           'Content-Type': 'application/json',
-          'x-auth-token': verificationToken
+          'x-auth-token': "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjY2YzMzZTZmM2NhMWExYTMwNjYzMGNkIiwidXNlcm5hbWUiOiJUdXNoYXIgQmlzaHQiLCJlbWFpbCI6InR1c2hhcmJpc2h0MDIxNkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4ifSwiaWF0IjoxNzE4MzY3MjA2LCJleHAiOjE3MTg1NDcyMDZ9.6XgeiLRucXUFYiaKZnGVKArxHRADr32Zlg_IRM7AC5E"
         }
       });
       if (response.status === 200) {

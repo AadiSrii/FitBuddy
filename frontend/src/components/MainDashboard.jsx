@@ -4,6 +4,7 @@ import Dashboard from "./dashboardOne";
 
 const SwitchComponent = () => {
     const [role, setRole] = useState('user');
+   
     const [currentView, setCurrentView] = useState('user');
   
     useEffect(() => {
