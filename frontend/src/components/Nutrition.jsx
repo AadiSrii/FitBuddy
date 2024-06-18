@@ -1,122 +1,232 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './NutritionCalculator.css';
+import './FoodSearch.css';
 
-const NutritionCalculator = () => {
-  const [foodName, setFoodName] = useState('');
-  const [nutritionData, setNutritionData] = useState([]);
-  const [error, setError] = useState('');
-  const [caloriesIntake, setCaloriesIntake] = useState(null);
+const FoodSearch = () => {
+  const [foodData, setFoodData] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('100ml milk');
+  const [selectedServingSize, setSelectedServingSize] = useState(null);
 
-  // Example token, replace with your actual token handling logic
-  const verificationToken = JSON.parse(localStorage.getItem("fitbuddy")).token;
 
-  const handleChange = (e) => {
-    setFoodName(e.target.value);
-  };
-
-  const fetchNutritionData = async () => {
+   const addNewServing = async (nutritionItem) => {
     try {
-      const response = await axios.get(`https://api.api-ninjas.com/v1/nutrition?query=${foodName}`, {
-        headers: { 'X-Api-Key': 'eB4OXzifHLlkduM+zBRDbg==2aO8Idqe2DeeBv1u' },
-      });
-      setNutritionData(response.data);
-      setError('');
-    } catch (err) {
-      setError('Could not fetch nutrition data. Please try again.');
-      setNutritionData([]);
-    }
-  };
-
-  const addToDashboard = async (calories) => {
-    try {
-      const response = await axios.post('https://fitbuddy-h75f.onrender.com/api/dashboard/update ', {
-        caloriesIntake: calories
+        let token =  JSON.parse(localStorage.getItem("fitbuddy"))
+      const response = await axios.post(`https://fitbuddy-h75f.onrender.com/api/auth/nutrition`, {
+        nutritionItem,
       }, {
         headers: {
           'Content-Type': 'application/json',
-          'x-auth-token': verificationToken
-        }
+          "x-auth-token" : token.token
+        },
       });
+  
       if (response.status === 200) {
-        alert('Calories intake added to dashboard successfully!');
+        return response.data;
       } else {
-        alert('Failed to add calories intake to dashboard.');
-      }
-    } catch (error) {
-      console.error('Error adding calories intake to dashboard:', error);
-      alert('Failed to add calories intake to dashboard. Please try again later.');
-    }
-  };
-
-  const addNutritionToDashboard = async (nutritionItem) => {
-    try {
-      const response = await axios.post('https://fitbuddy-h75f.onrender.com/api/auth/nutrition', {
-        nutritionItem: nutritionItem
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-          'x-auth-token': verificationToken
-        }
-      });
-      if (response.status === 200) {
-        alert('Nutrition added to dashboard successfully!');
-      } else {
-        alert('Failed to add nutrition to dashboard.');
+        throw new Error('Failed to add nutrition to dashboard.');
       }
     } catch (error) {
       console.error('Error adding nutrition to dashboard:', error);
-      alert('Failed to add nutrition to dashboard. Please try again later.');
+      throw new Error('Failed to add nutrition to dashboard. Please try again later.');
+    }
+  };
+  
+  // Function to update the daily metrics (including calorie intake)
+  const updateDailyMetrics = async (caloriesIntake) => {
+    let token =  JSON.parse(localStorage.getItem("fitbuddy"))
+    try {
+      const response = await axios.post(`https://fitbuddy-h75f.onrender.com/api/dashboard/update`, {
+        caloriesIntake,
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          "x-auth-token" : token.token
+        },
+      });
+  
+      if (response.status === 200) {
+        return response.data;
+      } else {
+        throw new Error('Failed to update calorie intake to dashboard.');
+      }
+    } catch (error) {
+      console.error('Error updating calorie intake to dashboard:', error);
+      throw new Error('Failed to update calorie intake to dashboard. Please try again later.');
     }
   };
 
-  const handleAddToDashboard = () => {
-    if (caloriesIntake) {
-      addToDashboard(caloriesIntake);
-    } else {
-      alert('Please calculate nutrition information first.');
+
+  useEffect(() => {
+    const fetchFoodData = async () => {
+      try {
+        const response = await axios.get('https://api.edamam.com/api/food-database/v2/parser', {
+          params: {
+            app_id: '0bae2364',
+            app_key: 'b6d3efddd6e62d68bdff1da3e25d5bd1',
+            ingr: searchTerm,
+            'nutrition-type': 'logging',
+          },
+        });
+        setFoodData(response.data);
+      } catch (error) {
+        console.error('Error fetching food data:', error);
+      }
+    };
+
+    fetchFoodData();
+  }, [searchTerm]);
+
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleServingSizeChange = (event, item) => {
+    const selectedMeasure = item.measures.find(
+      (measure) => measure.label === event.target.value
+    );
+    setSelectedServingSize({ item, measure: selectedMeasure });
+  };
+
+  const calculateNutrientValue = (nutrientValue, measure) => {
+    if (measure && measure.weight) {
+      return (nutrientValue * measure.weight) / 100;
+    }
+    return nutrientValue;
+  };
+
+  const handleAddToNutrition = async (item, selectedMeasure) => {
+    try {
+      const {
+        ENERC_KCAL,
+        PROCNT,
+        FAT,
+        CHOCDF,
+        FIBTG,
+        ...restNutrients
+      } = item.food.nutrients;
+
+      const nutritionItem = {
+        calories: calculateNutrientValue(ENERC_KCAL, selectedMeasure),
+        serving_size_g: selectedMeasure.weight,
+        protein_g: calculateNutrientValue(PROCNT, selectedMeasure),
+        fat_total_g: calculateNutrientValue(FAT, selectedMeasure),
+        carbohydrates_total_g: calculateNutrientValue(CHOCDF, selectedMeasure),
+        fiber_g: calculateNutrientValue(FIBTG, selectedMeasure),
+        ...Object.entries(restNutrients).reduce(
+          (acc, [key, value]) => ({
+            ...acc,
+            [`${key.toLowerCase()}_mg`]: calculateNutrientValue(value, selectedMeasure),
+          }),
+          {}
+        ),
+      };
+
+      await addNewServing(nutritionItem);
+      await updateDailyMetrics({ caloriesIntake: nutritionItem.calories });
+      alert('Nutrition information added to dashboard!');
+    } catch (error) {
+      console.error('Error adding nutrition information:', error);
+      alert('Failed to add nutrition information. Please try again later.');
     }
   };
 
   return (
-    <div className="nutrition-container">
-      <h1 className="title">Nutrition Calculator</h1>
-      <div className="input-group">
-        <label>Food Name:</label>
-        <input
-          type="text"
-          value={foodName}
-          onChange={handleChange}
-          placeholder="Enter food name (e.g., 2 eggs)"
-        />
-      </div>
-      <button className="calculate-button" onClick={fetchNutritionData}>Get Nutrition Info</button>
-      {error && <div className="error">{error}</div>}
-      {nutritionData.length > 0 && (
-        <div className="result">
-          <h2>Nutrition Information:</h2>
-          {nutritionData.map((item, index) => (
-            <div key={index} className="nutrition-item">
-              <h3>{item.name}</h3>
-              <p>Calories: {item.calories}</p>
-              <p>Serving Size: {item.serving_size_g} g</p>
-              <p>Total Fat: {item.fat_total_g} g</p>
-              <p>Saturated Fat: {item.fat_saturated_g} g</p>
-              <p>Protein: {item.protein_g} g</p>
-              <p>Sodium: {item.sodium_mg} mg</p>
-              <p>Potassium: {item.potassium_mg} mg</p>
-              <p>Cholesterol: {item.cholesterol_mg} mg</p>
-              <p>Total Carbohydrates: {item.carbohydrates_total_g} g</p>
-              <p>Fiber: {item.fiber_g} g</p>
-              <p>Sugar: {item.sugar_g} g</p>
-              <button className="add-to-dashboard-button" onClick={() =>{ setCaloriesIntake(item.calories); handleAddToDashboard();addNutritionToDashboard(item)}}>Add to Dashboard</button>
-            </div>
-          ))}
+    <div className="food-search">
+      <h1>Food Search</h1>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={handleSearch}
+        placeholder="Search for a food..."
+      />
+      {foodData ? (
+        <div className="food-data">
+          <h2>{foodData.text}</h2>
+          <div className="food-items">
+            {foodData.hints.map((item, index) => (
+              <div key={index} className="food-item">
+                <img src={item.food.image} alt={item.food.label} />
+                <h3>{item.food.label}</h3>
+                {item.food.nutrients ? (
+                  <>
+                    <select
+                      value={selectedServingSize?.measure?.label || ''}
+                      onChange={(event) => handleServingSizeChange(event, item)}
+                    >
+                      <option value="">Select Serving Size</option>
+                      {item.measures.map((measure, measureIndex) => (
+                        <option key={measureIndex} value={measure.label}>
+                          {measure.label}
+                        </option>
+                      ))}
+                    </select>
+                    {selectedServingSize?.item === item ? (
+                      <>
+                        <p>
+                          Calories:{' '}
+                          {calculateNutrientValue(
+                            item.food.nutrients.ENERC_KCAL,
+                            selectedServingSize.measure
+                          ).toFixed(2)}
+                        </p>
+                        <p>
+                          Protein:{' '}
+                          {calculateNutrientValue(
+                            item.food.nutrients.PROCNT,
+                            selectedServingSize.measure
+                          ).toFixed(2)}
+                          g
+                        </p>
+                        <p>
+                          Fat:{' '}
+                          {calculateNutrientValue(
+                            item.food.nutrients.FAT,
+                            selectedServingSize.measure
+                          ).toFixed(2)}
+                          g
+                        </p>
+                        <p>
+                          Carbs:{' '}
+                          {calculateNutrientValue(
+                            item.food.nutrients.CHOCDF,
+                            selectedServingSize.measure
+                          ).toFixed(2)}
+                          g
+                        </p>
+                        <p>
+                          Fiber:{' '}
+                          {calculateNutrientValue(
+                            item.food.nutrients.FIBTG,
+                            selectedServingSize.measure
+                          ).toFixed(2)}
+                          g
+                        </p>
+                        <button
+                          onClick={() =>
+                            selectedServingSize?.measure &&
+                            handleAddToNutrition(item, selectedServingSize.measure)
+                          }
+                          disabled={!selectedServingSize?.measure}
+                        >
+                          Add to Dashboard
+                        </button>
+                      </>
+                    ) : (
+                      <p>Select a serving size to see nutrient values</p>
+                    )}
+                  </>
+                ) : (
+                  <p>No nutrient information available</p>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
+      ) : (
+        <p>Loading...</p>
       )}
-      
     </div>
   );
 };
 
-export default NutritionCalculator;
+export default FoodSearch;

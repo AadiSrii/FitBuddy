@@ -9,6 +9,7 @@
   box-sizing: border-box;
 }
 
+
 .logo {
   height: 50px;
   margin-left: 20px;
@@ -116,7 +117,7 @@
 
 .loginBox {
   width: 300px;
-  margin-left: 900px;
+  margin-left: 80%;
   margin-top: 190px;
 }
 
@@ -128,6 +129,10 @@
   border: none;
   border-radius: 5px;
   font-weight: 650;
+}
+.loginBox button:hover {
+  background-color: rgb(38, 38, 235);
+  color: white;
 }
 
 .loginBox>span {
@@ -531,10 +536,10 @@
 /*  3  */
 
 .small-carousel {
-  width: 1130px;
+  width: 75%;
   height: 370px;
   border: 1px solid;
-  margin-left: 200px;
+  margin-left: 12.5%;
   margin-top: 70px;
 }
 
@@ -602,7 +607,7 @@
     width: 75%;
     border: none;
     margin-left: -1px;
-    margin-left: 150px;
+    margin-left: 12%;
     margin-bottom: 60px;
   }
 
@@ -677,13 +682,13 @@
   font-weight: 800;
   letter-spacing: -2px;
   margin-top: 50px;
-  margin-left: 550px;
+  margin-left: 30%;
 
 }
 
 .hit {
   margin-top: 20px;
-  margin-left: 550px;
+  margin-left: 31.5%;
 }
 
 .joinBtn {
@@ -692,7 +697,7 @@
   font-weight: 600;
   height: 45px;
   width: 200px;
-  margin-left: 650px;
+  margin-left: 40%;
   margin-top: 60px;
   border-radius: 5px;
   margin-bottom: 50px;
@@ -813,7 +818,7 @@
 
 
 .blackfooter {
-  width: 1519.5px;
+  width: 100%;
   height: 70px;
   background-color: black;
   color: white;
@@ -1140,7 +1145,7 @@ hr {
 .eat-text {
   width: 40%;
   padding-top: 150px;
-  margin-left: 100px;
+  margin-left: 10%;
 
 }
 
@@ -1158,10 +1163,11 @@ hr {
   border-radius: 25px;
   border: none;
   margin-top: 25px;
+  margin-left: 40%;
 }
 
 .eat-image {
-  width: 32%;
+  width: 27%;
 }
 
 .food {
@@ -1183,8 +1189,8 @@ hr {
   }
 
   .eat-image {
-    width: 38%;
-    margin-left: 32%;
+    width: 27%;
+    margin-left: 40%;
   }
 }
 

@@ -1,0 +1,43 @@
+.challenge-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 60%;
+  margin: auto;
+}
+
+.challenge-item {
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #696969;
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.show-exercises-btn {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background-color: #007BFF;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.show-exercises-btn:hover {
+  background-color: #0056b3;
+}
+
+.exercise-list {
+  margin-top: 10px;
+}
+
+.exercise-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.exercise-list li {
+  margin: 5px 0;
+}
