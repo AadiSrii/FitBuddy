@@ -19,7 +19,7 @@ export const Navbar = () => {
   return (
     <div className="nav">
       <NavLink to="/" className="nav-link">
-        <img src="/images/logo.jpeg" alt="FitBuddy-Logo" className="logo" />
+        <img src="../images/logo.jpeg" alt="FitBuddy-Logo" className="logo" />
       </NavLink>
       <div className={`nav-links ${isOpen ? "open" : ""}`}>
         <ul>
@@ -45,6 +45,14 @@ export const Navbar = () => {
                   className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
                 >
                   Track
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/foodSearch"
+                  className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}
+                >
+                  Search Food
                 </NavLink>
               </li>
           <li>

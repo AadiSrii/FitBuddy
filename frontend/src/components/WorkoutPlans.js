@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './WorkoutPlans.css';
+import { Footer } from '../pages/Footer';
 
 const WorkoutPlans = () => {
   const plans = [
@@ -132,6 +133,7 @@ const WorkoutPlans = () => {
           </Link>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

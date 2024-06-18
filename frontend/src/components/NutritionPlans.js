@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import nutritionPlans from '../data/nutritionPlans.json'; // Adjust path as per your project structure
 import './NutritionPlans.css'; // Style file for this component
+import { Footer } from '../pages/Footer';
 
 const NutritionPlans = () => {
   return (
@@ -22,6 +23,7 @@ const NutritionPlans = () => {
         </Link>
       ))}
     </div>
+    <Footer />
     </div>
   );
 };

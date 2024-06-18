@@ -19,6 +19,7 @@ import ChallengePage from './components/Challenges/ChallengePage';
 import './App.css';
 import SwitchComponent from './components/MainDashboard';
 import Track from './pages/track';
+import FoodSearch from './components/Nutrition';
 
 const App = () => {
   return (
@@ -37,6 +38,7 @@ const App = () => {
           <Route path="/challenges" element={<ChallengePage />} />
           <Route path="/dashboard" element={<SwitchComponent />} />
           <Route path="/track" element={<Track />} />
+          <Route path="/foodSearch" element={<FoodSearch />} />
         </Routes>
       </div>
     </Router>

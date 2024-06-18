@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ChallengeList from '../Challenges/ChallengeList';
+import { Footer } from '../../pages/Footer';
 
 const ChallengePage = () => {
   const [challenges, setChallenges] = useState([]);
@@ -20,6 +21,7 @@ const ChallengePage = () => {
       <div className="challenge-page-container">
         <ChallengeList challenges={challenges} />
       </div>
+      <Footer />
     </div>
   );
 };
