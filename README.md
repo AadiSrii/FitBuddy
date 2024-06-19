@@ -2,6 +2,13 @@
 
 FitBuddy is a comprehensive fitness tracking application designed to help users achieve their fitness and health goals. This project provides a user-friendly platform for individuals to monitor their diet, exercise routines, and overall progress. FitBuddy is developed collaboratively by a team of three members within a span of five days.
 
+## Project type 
+- Frontend | Backend
+
+## Deployment link
+- Frontend - https://fit-buddy-roan.vercel.app/
+- Backend - https://fitbuddy-h75f.onrender.com
+
 
 ## Features
 
