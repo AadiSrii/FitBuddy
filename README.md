@@ -2,13 +2,6 @@
 
 FitBuddy is a comprehensive fitness tracking application designed to help users achieve their fitness and health goals. This project provides a user-friendly platform for individuals to monitor their diet, exercise routines, and overall progress. FitBuddy is developed collaboratively by a team of three members within a span of five days.
 
-## Table of Contents
-1. [Features](#features)
-2. [Installation](#installation)
-3. [Usage](#usage)
-4. [Contributing](#contributing)
-5. [License](#license)
-6. [Contact](#contact)
 
 ## Features
 
@@ -17,6 +10,21 @@ FitBuddy is a comprehensive fitness tracking application designed to help users 
 - **Progress Monitoring**: Track weight changes, body measurements, and other fitness goals over time.
 - **User-Friendly Interface**: Intuitive design for ease of use.
 - **Analytics and Reports**: Generate detailed reports to visualize progress and identify trends.
+
+## Screenshots
+![image](https://github.com/AadiSrii/FitBuddy/assets/157601195/f04161a0-ecb0-465e-aa49-9f29a171eb29)
+![image](https://github.com/AadiSrii/FitBuddy/assets/157601195/95b383ca-aef5-48ca-b826-aaada983ad3e)
+
+
+
+
+
+##Demo Video
+- Video walkthrough of the project and code base -
+   https://github.com/AadiSrii/FitBuddy/assets/157601195/a8e385cb-7893-4f82-ae20-08a6cd57fdc6
+
+
+
 
 ## Installation
 
@@ -100,9 +108,8 @@ FitBuddy is a collaborative project, and contributions are welcome. To contribut
 7. **Create a Pull Request**:
     - Open a pull request to merge your changes into the main repository.
 
-## License
 
-FitBuddy is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
 
 ## Contact
 
@@ -113,3 +120,13 @@ For any questions or inquiries, please contact us:
 - Vibha Maurya (mailto: vibhamaurya060@gmail.com )
 
 We hope you enjoy using FitBuddy to achieve your fitness goals!
+
+## Tech stack
+- Html
+- CSS
+- React
+- Nodejs
+- ExpressJS
+- Mongo-DB
+- Render
+
