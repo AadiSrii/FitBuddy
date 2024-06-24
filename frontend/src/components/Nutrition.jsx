@@ -7,19 +7,20 @@ const FoodSearch = () => {
   const [searchTerm, setSearchTerm] = useState('100ml milk');
   const [selectedServingSize, setSelectedServingSize] = useState(null);
 
-
-   const addNewServing = async (nutritionItem) => {
+  const addNewServing = async (nutritionItem) => {
     try {
-        let token =  JSON.parse(localStorage.getItem("fitbuddy"))
-      const response = await axios.post(`https://fitbuddy-h75f.onrender.com/api/auth/nutrition`, {
-        nutritionItem,
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-          "x-auth-token" : token.token
-        },
-      });
-  
+      let token = JSON.parse(localStorage.getItem("fitbuddy"));
+      const response = await axios.post(
+        `https://fitbuddy-h75f.onrender.com/api/auth/nutrition`,
+        { nutritionItem },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            "x-auth-token": token.token,
+          },
+        }
+      );
+
       if (response.status === 200) {
         return response.data;
       } else {
@@ -30,20 +31,23 @@ const FoodSearch = () => {
       throw new Error('Failed to add nutrition to dashboard. Please try again later.');
     }
   };
-  
-  // Function to update the daily metrics (including calorie intake)
-  const updateDailyMetrics = async (caloriesIntake) => {
-    let token =  JSON.parse(localStorage.getItem("fitbuddy"))
+
+  const updateDailyMetrics = async ({caloriesIntake}) => {
+    let token = JSON.parse(localStorage.getItem("fitbuddy"));
+    let caloriesBurned =0;
+    let  workoutsCompleted =0;
     try {
-      const response = await axios.post(`https://fitbuddy-h75f.onrender.com/api/dashboard/update`, {
-        caloriesIntake,
-      }, {
-        headers: {
-          'Content-Type': 'application/json',
-          "x-auth-token" : token.token
-        },
-      });
-  
+      const response = await axios.post(
+        `https://fitbuddy-h75f.onrender.com/api/dashboard/update`,
+        { caloriesIntake,caloriesBurned, workoutsCompleted },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            "x-auth-token": token.token,
+          },
+        }
+      );
+
       if (response.status === 200) {
         return response.data;
       } else {
@@ -54,7 +58,6 @@ const FoodSearch = () => {
       throw new Error('Failed to update calorie intake to dashboard. Please try again later.');
     }
   };
-
 
   useEffect(() => {
     const fetchFoodData = async () => {
@@ -97,32 +100,34 @@ const FoodSearch = () => {
   const handleAddToNutrition = async (item, selectedMeasure) => {
     try {
       const {
-        ENERC_KCAL,
-        PROCNT,
-        FAT,
-        CHOCDF,
-        FIBTG,
-        ...restNutrients
+        ENERC_KCAL = 0,
+        PROCNT = 0,
+        FAT = 0,
+        FASAT = 0,
+        CHOCDF = 0,
+        FIBTG = 0,
+        SUGAR = 0,
+        NA = 0,
+        K = 0,
+        CHOLE = 0,
       } = item.food.nutrients;
 
       const nutritionItem = {
-        calories: calculateNutrientValue(ENERC_KCAL, selectedMeasure),
-        serving_size_g: selectedMeasure.weight,
-        protein_g: calculateNutrientValue(PROCNT, selectedMeasure),
-        fat_total_g: calculateNutrientValue(FAT, selectedMeasure),
-        carbohydrates_total_g: calculateNutrientValue(CHOCDF, selectedMeasure),
-        fiber_g: calculateNutrientValue(FIBTG, selectedMeasure),
-        ...Object.entries(restNutrients).reduce(
-          (acc, [key, value]) => ({
-            ...acc,
-            [`${key.toLowerCase()}_mg`]: calculateNutrientValue(value, selectedMeasure),
-          }),
-          {}
-        ),
+        calories: parseInt(calculateNutrientValue(ENERC_KCAL, selectedMeasure)) || 0,
+        serving_size_g: parseInt(selectedMeasure.weight) || 0,
+        protein_g: parseInt(calculateNutrientValue(PROCNT, selectedMeasure)) || 0,
+        fat_total_g: parseInt(calculateNutrientValue(FAT, selectedMeasure)) || 0,
+        fat_saturated_g: parseInt(calculateNutrientValue(FASAT, selectedMeasure)) || 0,
+        carbohydrates_total_g: parseInt(calculateNutrientValue(CHOCDF, selectedMeasure)) || 0,
+        fiber_g: parseInt(calculateNutrientValue(FIBTG, selectedMeasure)) || 0,
+        sugar_g: parseInt(calculateNutrientValue(SUGAR, selectedMeasure)) || 0,
+        sodium_mg: parseInt(calculateNutrientValue(NA, selectedMeasure)) || 0,
+        potassium_mg: parseInt(calculateNutrientValue(K, selectedMeasure)) || 0,
+        cholesterol_mg: parseInt(calculateNutrientValue(CHOLE, selectedMeasure)) || 0,
       };
 
       await addNewServing(nutritionItem);
-      await updateDailyMetrics({ caloriesIntake: nutritionItem.calories });
+      await updateDailyMetrics({ caloriesIntake:nutritionItem.calories });
       alert('Nutrition information added to dashboard!');
     } catch (error) {
       console.error('Error adding nutrition information:', error);
@@ -163,49 +168,37 @@ const FoodSearch = () => {
                     {selectedServingSize?.item === item ? (
                       <>
                         <p>
-                          Calories:{' '}
-                          {calculateNutrientValue(
-                            item.food.nutrients.ENERC_KCAL,
-                            selectedServingSize.measure
-                          ).toFixed(2)}
+                          Calories: {calculateNutrientValue(item.food.nutrients.ENERC_KCAL, selectedServingSize.measure).toFixed(2)}
                         </p>
                         <p>
-                          Protein:{' '}
-                          {calculateNutrientValue(
-                            item.food.nutrients.PROCNT,
-                            selectedServingSize.measure
-                          ).toFixed(2)}
-                          g
+                          Protein: {calculateNutrientValue(item.food.nutrients.PROCNT, selectedServingSize.measure).toFixed(2)} g
                         </p>
                         <p>
-                          Fat:{' '}
-                          {calculateNutrientValue(
-                            item.food.nutrients.FAT,
-                            selectedServingSize.measure
-                          ).toFixed(2)}
-                          g
+                          Fat: {calculateNutrientValue(item.food.nutrients.FAT, selectedServingSize.measure).toFixed(2)} g
                         </p>
                         <p>
-                          Carbs:{' '}
-                          {calculateNutrientValue(
-                            item.food.nutrients.CHOCDF,
-                            selectedServingSize.measure
-                          ).toFixed(2)}
-                          g
+                          Saturated Fat: {calculateNutrientValue(item.food.nutrients.FASAT, selectedServingSize.measure).toFixed(2)} g
                         </p>
                         <p>
-                          Fiber:{' '}
-                          {calculateNutrientValue(
-                            item.food.nutrients.FIBTG,
-                            selectedServingSize.measure
-                          ).toFixed(2)}
-                          g
+                          Carbs: {calculateNutrientValue(item.food.nutrients.CHOCDF, selectedServingSize.measure).toFixed(2)} g
+                        </p>
+                        <p>
+                          Fiber: {calculateNutrientValue(item.food.nutrients.FIBTG, selectedServingSize.measure).toFixed(2)} g
+                        </p>
+                        <p>
+                          Sugar: {calculateNutrientValue(item.food.nutrients.SUGAR, selectedServingSize.measure).toFixed(2)} g
+                        </p>
+                        <p>
+                          Sodium: {calculateNutrientValue(item.food.nutrients.NA, selectedServingSize.measure).toFixed(2)} mg
+                        </p>
+                        <p>
+                          Potassium: {calculateNutrientValue(item.food.nutrients.K, selectedServingSize.measure).toFixed(2)} mg
+                        </p>
+                        <p>
+                          Cholesterol: {calculateNutrientValue(item.food.nutrients.CHOLE, selectedServingSize.measure).toFixed(2)} mg
                         </p>
                         <button
-                          onClick={() =>
-                            selectedServingSize?.measure &&
-                            handleAddToNutrition(item, selectedServingSize.measure)
-                          }
+                          onClick={() => selectedServingSize?.measure && handleAddToNutrition(item, selectedServingSize.measure)}
                           disabled={!selectedServingSize?.measure}
                         >
                           Add to Dashboard
