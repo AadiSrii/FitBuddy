@@ -10,6 +10,8 @@ import { Shop } from "./pages/Shop";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { Benefits } from "./pages/Benefits";
+
+
 import NutritionPlans from './components/NutritionPlans';
 import NutritionDetails from './components/NutritionDetails';
 import WorkoutPlans from './components/WorkoutPlans';
@@ -20,6 +22,7 @@ import './App.css';
 import SwitchComponent from './components/MainDashboard';
 import Track from './pages/track';
 import FoodSearch from './components/Nutrition';
+
 
 const App = () => {
   return (
@@ -41,6 +44,7 @@ const App = () => {
           <Route path="/foodSearch" element={<FoodSearch />} />
         </Routes>
       </div>
+
     </Router>
   );
 };
