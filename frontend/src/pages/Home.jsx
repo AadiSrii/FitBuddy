@@ -5,6 +5,7 @@ import '../App.css';
 import { Link } from 'react-router-dom';
 import { Footer } from './Footer';
 
+
 export const Home = () => {
   return (
     <>
@@ -121,7 +122,7 @@ export const Home = () => {
         <div className='eat-text'>
           <h1>Being healthy starts <br /> with what you eat. </h1>
           <p>Want to eat more mindfully? Track meals, learn about your habits, and <br /> reach your goals with FitBuddy.</p>
-          <button>Track Now!</button>
+          <Link to="/NutritionCalculator"><button>Track Now!</button></Link>
         </div>
         <div className='eat-image'>
           <img className='food' src="https://www.fitbuddynutritionapp.site/assets/img/homescreenhealthy.png" alt="" />

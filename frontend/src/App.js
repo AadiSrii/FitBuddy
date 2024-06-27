@@ -9,6 +9,8 @@ import { Shop } from "./pages/Shop";
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
 import { Benefits } from "./pages/Benefits";
+import NutritionCalculator from "./components/Nutrition";
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Route path="/Login" element={<Login/>} />
         <Route path="/Signup" element={<Signup/>} />
         <Route path="/Benefits" element={<Benefits/>} />
+        <Route path="/NutritionCalculator" element={<NutritionCalculator/>} />
       </Routes>
     </Router>
 

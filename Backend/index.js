@@ -3,7 +3,7 @@ import challenges from './src/routes/addChallenges.js';
 import dotenv from 'dotenv';
 import router from './src/routes/authRoutes.js';
 import connectDB from './src/configs/db.js';
-import cors from "cors"
+import cors from "cors";
 dotenv.config();
 
 const app = express();
@@ -11,13 +11,13 @@ const app = express();
 app.use(express.json()); // Built-in middleware for parsing JSON request bodies
 app.use(cors());
 app.use('/api/auth', router); 
-app.use('/api/dashboard', DashboardRouter)
-app.use("/api/auth", nutritionRouter)
+app.use('/api/dashboard', DashboardRouter);
+app.use("/api/auth", nutritionRouter);
 app.use("/api/admin/challenges",challenges);
 app.use('/api/admin/users', adminRouter);
 app.get("/", (req,res)=>{
-res.send("This is home route")
-})
+res.send("This is home route");
+});
 const PORT = process.env.PORT || 5000;
 
 import cron from 'node-cron';
@@ -91,6 +91,7 @@ cron.schedule('59 23 * * *', async () => {
     console.error('Error moving daily metrics to history:', err.message);
   }
 });
+
 
 app.listen(PORT, async() => {
   await connectDB();
