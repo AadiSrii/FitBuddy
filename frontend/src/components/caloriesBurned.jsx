@@ -19,13 +19,15 @@ function BurnedCalories() {
 
   const addToDashboard = async () => {
     try {
+     let  workoutsCompleted=0;
+    let  caloriesIntake=0
       const response = await fetch('https://fitbuddy-h75f.onrender.com/api/dashboard/update', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'x-auth-token': fitbuddyData.token
         },
-        body: JSON.stringify({ caloriesBurned })
+        body: JSON.stringify({ caloriesBurned, workoutsCompleted, caloriesIntake  })
       });
       if (response.ok) {
         alert('Calories added to dashboard successfully!');

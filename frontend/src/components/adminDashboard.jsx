@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './SingleCardDashboard.css'; // Create a CSS file for styling
 import { FaUsers } from 'react-icons/fa'; // Import icon
+import ChallengeForm from './Challenges/ChallengeForm'
 
 const SingleCardDashboard = () => {
   const [userCount, setUserCount] = useState(null);
@@ -39,6 +40,7 @@ const SingleCardDashboard = () => {
         <label>Total Users</label>
         <span>{userCount}</span>
       </div>
+      <ChallengeForm />
     </div>
   );
 };

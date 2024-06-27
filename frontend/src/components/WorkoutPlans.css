@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: black;
+  }
+  .head{
+    margin-top: -2%;
+    margin-bottom: 2%;
+    width: 100%;
+    height: 40vh;
+    background-color: black;
+    h1{
+      text-align: start;
+      margin-left: 10%;
+      color: white;
+      padding-top: 4%;
+    }
+    p{
+      color: white;
+      margin-left: 10%;
+    }
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .plans-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-decoration: none;
+  }
+  
+  .workout-plan {
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    width: 300px;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: white;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .workout-plan:hover {
+    transform: scale(1.05);
+  }
+  
+  .workout-plan h2 {
+    margin: 0;
+    text-decoration: none;
+  }
+  .workout-plan p {
+    margin: 5px 0 0;
+    text-decoration: none;
+    color: white;
+  }
+  

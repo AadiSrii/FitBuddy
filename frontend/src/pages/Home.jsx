@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../App.css';
 import { Link } from 'react-router-dom';
 import { Footer } from './Footer';
+import ChallengePage from '../../src/components/Challenges/ChallengePage'
 
 
 export const Home = () => {
@@ -112,7 +113,7 @@ export const Home = () => {
 
       <p className='push' >PUSH YOUR LIMITS</p>
       <p className='hit'>Hit milestones and PR’s by taking on a new challenge every month.</p>
-      <Link to="/Community"><button className='joinBtn'>JOIN A CHALLENGE</button></Link>
+      <Link to="/challenges"><button className='joinBtn'>JOIN A CHALLENGE</button></Link>
 
 
 
